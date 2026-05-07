@@ -2,7 +2,7 @@
 const FoodLog = () => {
   return (
     <div>
-
+       FoodLog
     </div>
   )
 }
