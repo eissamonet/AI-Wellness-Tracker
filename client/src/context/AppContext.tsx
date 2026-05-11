@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import { initialState, type User } from "../types";
+import { type ActivityEntry, type FoodEntry, initialState, type User } from "../types";
 import { useNavigate } from "react-router-dom";
 
 
@@ -10,6 +10,9 @@ export const AppProvider = ({children} : {children: React.ReactNode})=> {
     const navigate = useNavigate()
     const [user, setUser] = useState<User>(null)
     const [isUserFetched, setIsUserFetched] = useState(false)
+    const [onboardingCompleted, setOnboardingCompleted] = useState(false)
+    const [allFoodLogs, setAllFoodLogs] = useState<FoodEntry[]>([])
+    const [allActivityLogs, setAllActivityLogs] = useState<ActivityEntry[]>([])
 
     const value = {}
 
