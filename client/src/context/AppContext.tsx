@@ -33,6 +33,13 @@ export const AppProvider = ({children} : {children: React.ReactNode})=> {
         localStorage.setItem('token', data.jwt)
     }
 
+    const fetchUser = async (token: string) => {
+        const {data} = await mockApi.user.me()
+        setUser({...data, token})
+        if(data?.age && data?.weight && data?.goal) {
+            setOnboardingCompleted(true)
+        }
+
     const value = {}
 
     return <AppContext.Provider value={value}>
