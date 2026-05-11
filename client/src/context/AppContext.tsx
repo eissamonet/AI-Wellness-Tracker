@@ -68,11 +68,16 @@ export const AppProvider = ({children} : {children: React.ReactNode})=> {
                await fetchActivityLogs()
             })();
         }else {
-            setIsUserFetched(true)
+            // schedule the state update to avoid calling setState synchronously within the effect
+            Promise.resolve().then(() => setIsUserFetched(true))
         }
     }, [user])
 
-    const value = {}
+    const value = {
+        user, setUser, isUserFetched, fetchUser, signup,
+        login, logout, onboardingCompleted, setOnboardingCompleted,
+        allFoodLogs, setAllFoodLogs, allActivityLogs, setAllActivityLogs
+    }
 
     return <AppContext.Provider value={value}>
         {children}
