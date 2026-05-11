@@ -1,10 +1,15 @@
-import { createContext, useContext } from "react";
-import { initialState } from "../types";
+import { createContext, useContext, useState } from "react";
+import { initialState, type User } from "../types";
+import { useNavigate } from "react-router-dom";
 
 
 const AppContext = createContext(initialState)
 
 export const AppProvider = ({children} : {children: React.ReactNode})=> {
+
+    const navigate = useNavigate()
+    const [user, setUser] = useState<User>(null)
+    const [isUserFetched, setIsUserFetched] = useState(false)
 
     const value = {}
 
