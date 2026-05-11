@@ -1,16 +1,24 @@
-import { AtSignIcon } from "lucide-react";
-import { useState } from "react";
+import { AtSignIcon, MailIcon } from "lucide-react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAppContext } from "../context/AppContext";
 
 const Login = () => {
-  const [state, setState] = useState("signup")
-  const [username, setUsername] = useState("")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [showPassword, setShowPassword] = useState(false)
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [state, setState] = useState("signup");
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const { login, signup, user } = useAppContext();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user, navigate]);
 
   return (
     <>
@@ -25,17 +33,42 @@ const Login = () => {
               : "Please fill in the form to create an account."}
           </p>
 
+          {/* username */}
           {state !== "login" && (
             <div className="mt-4">
-              <label className="font-medium text-sm text-gray-700 dark:text-grat-300">Username</label>
+              <label className="font-medium text-sm text-gray-700 dark:text-grat-300">
+                Username
+              </label>
               <div className="relative mt-2">
-                <AtSignIcon className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 size-4.5"/>
-                <input className="login-input" required
-                type="text"
-                placeholder="Enter Username" />
+                <AtSignIcon className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 size-4.5" />
+                <input
+                  onChange={(e) => setUsername(e.target.value)}
+                  value={username}
+                  className="login-input"
+                  required
+                  type="text"
+                  placeholder="Enter Username"
+                />
               </div>
             </div>
           )}
+          {/* email */}
+          <div className="mt-4">
+            <label className="font-medium text-sm text-gray-700 dark:text-grat-300">
+              Email
+            </label>
+            <div className="relative mt-2">
+              <MailIcon className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 size-4.5" />
+              <input
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                className="login-input"
+                required
+                type="email"
+                placeholder="Enter Email"
+              />
+            </div>
+          </div>
         </form>
       </main>
     </>
