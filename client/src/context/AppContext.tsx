@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { type ActivityEntry, type Credentials, type FoodEntry, initialState, type User } from "../types";
 import { useNavigate } from "react-router-dom";
 import mockApi from "../assets/mockApi";
@@ -39,6 +39,38 @@ export const AppProvider = ({children} : {children: React.ReactNode})=> {
         if(data?.age && data?.weight && data?.goal) {
             setOnboardingCompleted(true)
         }
+        setIsUserFetched(true)
+    }
+
+    const fetchFoodLogs = async () => {
+       const {data} = await mockApi.foodLogs.list()
+       setAllFoodLogs(data)
+    }
+
+     const fetchActivityLogs = async () => {
+       const {data} = await mockApi.activityLogs.list()
+       setAllActivityLogs(data)
+    }
+
+    const logout = () => {
+        localStorage.removeItem('token')
+        setUser(null)
+        setOnboardingCompleted(false)
+        navigate('/')
+    }
+
+    useEffect(() => {
+        const token = localStorage.getItem('token')
+        if(token){
+            (async () => {
+               await fetchUser(token)
+               await fetchFoodLogs()
+               await fetchActivityLogs()
+            })();
+        }else {
+            setIsUserFetched(true)
+        }
+    }, [user])
 
     const value = {}
 
