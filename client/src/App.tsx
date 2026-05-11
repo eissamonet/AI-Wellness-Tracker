@@ -4,8 +4,10 @@ import Dashboard from "./pages/Dashboard"
 import Profile from "./pages/Profile"
 import FoodLog from "./pages/FoodLog"
 import ActivityLog from "./pages/ActivityLog"
+import { useAppContext } from "./context/AppContext"
 
 const App = () => {
+  const {user, isUserFetched, onboardingCompleted} = useAppContext()
   return (
     <>
       <Routes>
