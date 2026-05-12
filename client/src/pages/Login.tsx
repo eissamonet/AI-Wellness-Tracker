@@ -92,6 +92,10 @@ const Login = () => {
             </div>
           </div>
 
+          <button type= 'submit' disabled={isSubmitting}
+          className="login-button">
+            {isSubmitting ? "Signing In..." : state === "login" ? "LogIn" : "Sign Up"}
+          </button>
         </form>
       </main>
     </>
