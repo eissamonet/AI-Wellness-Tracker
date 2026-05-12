@@ -96,6 +96,12 @@ const Login = () => {
           className="login-button">
             {isSubmitting ? "Signing In..." : state === "login" ? "LogIn" : "Sign Up"}
           </button>
+
+          {state === "login" ? (
+            <p className="text-center py-6 text-sm text-gray-500 dark:text-gray-400">Dont Have an Account? <button>Sign Up</button></p>
+          ) : (
+            <p className="text-center py-6 text-sm text-gray-500 dark:text-gray-400">Already Have an Account? <button>Log In</button></p>
+          )}
         </form>
       </main>
     </>
