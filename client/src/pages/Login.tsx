@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
 
 const Login = () => {
-  const [state, setState] = useState("signup");
+  const [state, setState] = useState("login");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -94,13 +94,13 @@ const Login = () => {
 
           <button type= 'submit' disabled={isSubmitting}
           className="login-button">
-            {isSubmitting ? "Signing In..." : state === "login" ? "LogIn" : "Sign Up"}
+            {isSubmitting ? "Signing In..." : state === "login" ? "Login" : "Sign Up"}
           </button>
 
           {state === "login" ? (
-            <p className="text-center py-6 text-sm text-gray-500 dark:text-gray-400">Dont Have an Account? <button>Sign Up</button></p>
+            <p className="text-center py-6 text-sm text-gray-500 dark:text-gray-400">Dont Have an Account? <button className="ml-1 cursor-pointer text-green-600 hover:underline">Sign Up</button></p>
           ) : (
-            <p className="text-center py-6 text-sm text-gray-500 dark:text-gray-400">Already Have an Account? <button>Log In</button></p>
+            <p className="text-center py-6 text-sm text-gray-500 dark:text-gray-400">Already Have an Account? <button className="ml-1 cursor-pointer text-green-600 hover:underline">Login</button></p>
           )}
         </form>
       </main>
