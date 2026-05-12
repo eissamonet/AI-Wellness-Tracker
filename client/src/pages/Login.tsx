@@ -98,9 +98,11 @@ const Login = () => {
           </button>
 
           {state === "login" ? (
-            <p className="text-center py-6 text-sm text-gray-500 dark:text-gray-400">Dont Have an Account? <button className="ml-1 cursor-pointer text-green-600 hover:underline">Sign Up</button></p>
+            <p className="text-center py-6 text-sm text-gray-500 dark:text-gray-400">Dont Have an Account?
+            <button onClick={()=> setState('sign-up')} className="ml-1 cursor-pointer text-green-600 hover:underline">Sign Up</button></p>
           ) : (
-            <p className="text-center py-6 text-sm text-gray-500 dark:text-gray-400">Already Have an Account? <button className="ml-1 cursor-pointer text-green-600 hover:underline">Login</button></p>
+            <p className="text-center py-6 text-sm text-gray-500 dark:text-gray-400">Already Have an Account?
+            <button onClick={()=> setState('login')} className="ml-1 cursor-pointer text-green-600 hover:underline">Login</button></p>
           )}
         </form>
       </main>
