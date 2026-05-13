@@ -1,10 +1,12 @@
+import { Toaster } from "react-hot-toast"
 
 
 const Onboarding = () => {
   return (
-    <div>
-        Onboarding
-    </div>
+    <>
+      <Toaster />
+      <div></div>
+    </>
   )
 }
 
