@@ -15,6 +15,7 @@ const Onboarding = () => {
             </div>
             <h1 className="text-2xl font-bold text-slate-800 dark:text-white">Wellness Tracker</h1>
           </div>
+          <p className="text-slate-500 dark:text-slate-400">Let's personalize your experience!</p>
         </div>
       </div>
     </>
