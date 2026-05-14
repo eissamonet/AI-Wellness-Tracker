@@ -1,8 +1,13 @@
 import { PersonStanding } from "lucide-react"
+import { useState } from "react"
 import { Toaster } from "react-hot-toast"
+import { useAppContext } from "../context/AppContext"
 
 
 const Onboarding = () => {
+
+  const [step, setStep] = useState(1)
+  const {user, setOnboardingCompleted, fetchUser} = useAppContext()
   return (
     <>
       <Toaster />
@@ -17,7 +22,16 @@ const Onboarding = () => {
           </div>
           <p className="text-slate-500 dark:text-slate-400">Let's personalize your experience!</p>
         </div>
-      </div>
+
+        {/* progress indicator */}
+        <div className="px-6 mb-8 onboarding-wrapper">
+          <div className="flex gap-2 max-w-2xl">
+            {[1,2,3].map((s) => (
+              <div key={s} className={`h-1.5 flex-1 rounded-full transition-all duration-300 ${}`}/>
+            ))}
+          </div>
+        </div>
+     </div>
     </>
   )
 }
