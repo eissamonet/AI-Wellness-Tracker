@@ -2,12 +2,24 @@ import { PersonStanding } from "lucide-react"
 import { useState } from "react"
 import { Toaster } from "react-hot-toast"
 import { useAppContext } from "../context/AppContext"
+import type { ProfileFormData } from "../types"
 
 
 const Onboarding = () => {
 
   const [step, setStep] = useState(1)
   const {user, setOnboardingCompleted, fetchUser} = useAppContext()
+  const [formData, setFormData] = useState<ProfileFormData>({
+    age:0,
+    weight: 0,
+    height: 0,
+    goal: 'maintain',
+    dailyCalorieIntake: 2000,
+    dailyCalorieBurn: 400,
+  })
+
+
+
   return (
     <>
       <Toaster />
