@@ -18,6 +18,8 @@ const Onboarding = () => {
     dailyCalorieBurn: 400,
   })
 
+  const totalSteps = 3
+
 
 
   return (
@@ -39,9 +41,11 @@ const Onboarding = () => {
         <div className="px-6 mb-8 onboarding-wrapper">
           <div className="flex gap-2 max-w-2xl">
             {[1,2,3].map((s) => (
-              <div key={s} className={`h-1.5 flex-1 rounded-full transition-all duration-300 ${}`}/>
+              <div key={s} className={`h-1.5 flex-1 rounded-full transition-all duration-300
+              ${s <= step ? 'bg-emerald-500' : 'bg-slate-200 dark:bg-slate-800'}`}/>
             ))}
           </div>
+          <p>Step {step} of {totalSteps}</p>
         </div>
      </div>
     </>
