@@ -53,9 +53,13 @@ const Onboarding = () => {
         <div className="flex-1 px-6 onboarding-wrapper">
             {step === 1 && (
               <div className="space-y-6">
-                <div>
+                <div className="flex items-center gap-4 mb-8">
                   <div><User className="size-6 text-emerald-600 dark:text-emerald-400" /></div>
-                  <div></div>
+
+                  <div>
+                    <h2>How old are you</h2>
+                    <p>This helps us calculate your needs</p>
+                  </div>
               </div>
              </div>
             )}
