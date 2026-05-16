@@ -3,6 +3,7 @@ import { useState } from "react"
 import { Toaster } from "react-hot-toast"
 import { useAppContext } from "../context/AppContext"
 import type { ProfileFormData } from "../types"
+import Input from "../components/ui/Input"
 
 
 const Onboarding = () => {
@@ -19,6 +20,9 @@ const Onboarding = () => {
   })
 
   const totalSteps = 3
+
+  const updateField = (field: keyof ProfileFormData, value: string | number) => {
+    setFormData({...formData, [field]: value})
 
 
 
@@ -63,7 +67,9 @@ const Onboarding = () => {
                     <h2 className="text-lg font-semibold text-slate-800 dark:text-white">How old are you</h2>
                     <p className="text-slate-500 dark:text-slate-400 text-sm">This helps us calculate your needs</p>
                   </div>
-              </div>
+               </div>
+               <Input label='Age' type='number' className="max-w-2xl" value={formData.age}
+               onChange={(v)=>updateField('age', v)}/>
              </div>
             )}
         </div>
