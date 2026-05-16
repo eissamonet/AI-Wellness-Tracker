@@ -45,7 +45,13 @@ const Onboarding = () => {
               ${s <= step ? 'bg-emerald-500' : 'bg-slate-200 dark:bg-slate-800'}`}/>
             ))}
           </div>
-          <p>Step {step} of {totalSteps}</p>
+          <p className="text-sm text-slate-400 mt-3">Step {step} of {totalSteps}</p>
+        </div>
+
+
+        {/* form content */}
+        <div className="flex-1 px-6 onboarding-wrapper">
+
         </div>
      </div>
     </>
