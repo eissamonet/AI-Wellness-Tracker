@@ -54,7 +54,10 @@ const Onboarding = () => {
             {step === 1 && (
               <div className="space-y-6">
                 <div className="flex items-center gap-4 mb-8">
-                  <div><User className="size-6 text-emerald-600 dark:text-emerald-400" /></div>
+
+                  <div className="size-12 rounded-xl bg-emerald-50 dark:bg-emerald-900/10 border border-emerald-100
+                  dark:border-emerald-800 flex items-center justify-center">
+                  <User className="size-6 text-emerald-600 dark:text-emerald-400" /></div>
 
                   <div>
                     <h2>How old are you</h2>
