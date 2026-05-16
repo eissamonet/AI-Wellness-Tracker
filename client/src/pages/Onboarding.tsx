@@ -60,8 +60,8 @@ const Onboarding = () => {
                   <User className="size-6 text-emerald-600 dark:text-emerald-400" /></div>
 
                   <div>
-                    <h2>How old are you</h2>
-                    <p>This helps us calculate your needs</p>
+                    <h2 className="text-lg font-semibold text-slate-800 dark:text-white">How old are you</h2>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm">This helps us calculate your needs</p>
                   </div>
               </div>
              </div>
