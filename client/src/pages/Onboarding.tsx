@@ -23,6 +23,7 @@ const Onboarding = () => {
 
   const updateField = (field: keyof ProfileFormData, value: string | number) => {
     setFormData({...formData, [field]: value})
+  }
 
 
 
@@ -69,7 +70,7 @@ const Onboarding = () => {
                   </div>
                </div>
                <Input label='Age' type='number' className="max-w-2xl" value={formData.age}
-               onChange={(v)=>updateField('age', v)}/>
+               onChange={(v)=>updateField('age', v)} placeholder="Enter Your Age" min={13} max={120} required/>
              </div>
             )}
         </div>
