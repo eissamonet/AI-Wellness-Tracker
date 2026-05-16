@@ -1,4 +1,4 @@
-import { PersonStanding } from "lucide-react"
+import { PersonStanding, User } from "lucide-react"
 import { useState } from "react"
 import { Toaster } from "react-hot-toast"
 import { useAppContext } from "../context/AppContext"
@@ -51,7 +51,14 @@ const Onboarding = () => {
 
         {/* form content */}
         <div className="flex-1 px-6 onboarding-wrapper">
-
+            {step === 1 && (
+              <div className="space-y-6">
+                <div>
+                  <div><User className="size-6 text-emerald-600 dark:text-emerald-400" /></div>
+                  <div></div>
+              </div>
+             </div>
+            )}
         </div>
      </div>
     </>
