@@ -1,4 +1,4 @@
-import { PersonStanding, User } from "lucide-react"
+import { PersonStanding, ScaleIcon, User } from "lucide-react"
 import { useState } from "react"
 import { Toaster } from "react-hot-toast"
 import { useAppContext } from "../context/AppContext"
@@ -65,12 +65,30 @@ const Onboarding = () => {
                   <User className="size-6 text-emerald-600 dark:text-emerald-400" /></div>
 
                   <div>
-                    <h2 className="text-lg font-semibold text-slate-800 dark:text-white">How old are you</h2>
-                    <p className="text-slate-500 dark:text-slate-400 text-sm">This helps us calculate your needs</p>
+                    <h2 className="text-lg font-semibold text-slate-800 dark:text-white">How old are you?</h2>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm">This helps us calculate your needs.</p>
                   </div>
                </div>
                <Input label='Age' type='number' className="max-w-2xl" value={formData.age}
                onChange={(v)=>updateField('age', v)} placeholder="Enter Your Age" min={13} max={120} required/>
+             </div>
+            )}
+
+             {step === 2 && (
+              <div className="space-y-6 onboarding-wrapper">
+                <div className="flex items-center gap-4 mb-8">
+
+                  <div className="size-12 rounded-xl bg-emerald-50 dark:bg-emerald-900/10 border border-emerald-100
+                  dark:border-emerald-800 flex items-center justify-center">
+                  <ScaleIcon className="size-6 text-emerald-600 dark:text-emerald-400" /></div>
+
+                  <div>
+                    <h2 className="text-lg font-semibold text-slate-800 dark:text-white">What is your weight?</h2>
+                    <p className="text-slate-500 dark:text-slate-400 text-sm">This helps us track your progress.</p>
+                  </div>
+               </div>
+               <Input label='Weight' type='number' className="max-w-2xl" value={formData.weight}
+               onChange={(v)=>updateField('weight', v)} placeholder="Enter Your Weight" min={30} max={300} required/>
              </div>
             )}
         </div>
