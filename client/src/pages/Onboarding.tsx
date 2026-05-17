@@ -87,7 +87,7 @@ const Onboarding = () => {
                     <p className="text-slate-500 dark:text-slate-400 text-sm">This helps us track your progress.</p>
                   </div>
                 </div>
-                  <div>
+                  <div className="flex flex-col gap-4 max-w-2xl">
                     <Input label='Weight' type='number' className="max-w-2xl" value={formData.weight}
                     onChange={(v)=>updateField('weight', v)} placeholder="Enter Your Weight" min={30} max={300} required/>
                   </div>
