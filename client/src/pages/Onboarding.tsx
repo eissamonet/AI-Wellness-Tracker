@@ -86,10 +86,12 @@ const Onboarding = () => {
                     <h2 className="text-lg font-semibold text-slate-800 dark:text-white">What is your weight?</h2>
                     <p className="text-slate-500 dark:text-slate-400 text-sm">This helps us track your progress.</p>
                   </div>
+                </div>
+                  <div>
+                    <Input label='Weight' type='number' className="max-w-2xl" value={formData.weight}
+                    onChange={(v)=>updateField('weight', v)} placeholder="Enter Your Weight" min={30} max={300} required/>
+                  </div>
                </div>
-               <Input label='Weight' type='number' className="max-w-2xl" value={formData.weight}
-               onChange={(v)=>updateField('weight', v)} placeholder="Enter Your Weight" min={30} max={300} required/>
-             </div>
             )}
         </div>
      </div>
