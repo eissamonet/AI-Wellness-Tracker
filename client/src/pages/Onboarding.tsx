@@ -33,8 +33,8 @@ const Onboarding = () => {
           return toast('Age is Required')
       }
     }
-    if(step <totalSteps){
-      setSteps(step + 1);
+    if(step < totalSteps){
+      setStep(step + 1);
     } else {
       const userData = {
         ...formData,
