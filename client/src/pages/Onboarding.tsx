@@ -4,6 +4,7 @@ import { Toaster } from "react-hot-toast";
 import { useAppContext } from "../context/AppContext";
 import type { ProfileFormData } from "../types";
 import Input from "../components/ui/Input";
+import Button from "../components/ui/Button";
 
 const Onboarding = () => {
   const [step, setStep] = useState(1);
@@ -158,30 +159,20 @@ const Onboarding = () => {
                   </p>
                 </div>
               </div>
-              <div className="flex flex-col gap-4 max-w-2xl">
-                <Input
-                  label="Weight (lb)"
-                  type="number"
-                  value={formData.weight}
-                  onChange={(v) => updateField("weight", v)}
-                  placeholder="Enter Your Weight"
-                  min={20}
-                  max={300}
-                  required
-                />
 
-                <Input
-                  label="Height (in) - Optional"
-                  type="number"
-                  value={formData.height}
-                  onChange={(v) => updateField("height", v)}
-                  placeholder="Enter Your Height"
-                  min={100}
-                  max={250}
-                />
-              </div>
+
             </div>
           )}
+        </div>
+        {/* navigation buttons */}
+        <div>
+          <div>
+            {step > 1 && (
+              <Button variant="secondary" onClick={()=>} className="max-lg:flex-1 lg:px-10">
+
+              </Button>>
+            )}
+          </div>
         </div>
       </div>
     </>
