@@ -1,4 +1,4 @@
-import { ArrowLeft, PersonStanding, ScaleIcon, Target, User } from "lucide-react";
+import { ArrowLeft, ArrowRight, PersonStanding, ScaleIcon, Target, User } from "lucide-react";
 import { useState } from "react";
 import { Toaster } from "react-hot-toast";
 import { useAppContext } from "../context/AppContext";
@@ -26,6 +26,8 @@ const Onboarding = () => {
   ) => {
     setFormData({ ...formData, [field]: value });
   };
+    const handleNext =async () => {}
+
 
   return (
     <>
@@ -165,8 +167,8 @@ const Onboarding = () => {
           )}
         </div>
         {/* navigation buttons */}
-        <div>
-          <div>
+        <div className="p-6 pb-10 onboarding-wrapper">
+          <div className="flex gap-3 lg:justify-end">
             {step > 1 && (
               <Button variant="secondary" onClick={()=> setStep(step > 1 ? step - 1 : 1)} className="max-lg:flex-1 lg:px-10">
                   <span className="flex items-center justify-center gap-2">
@@ -175,10 +177,11 @@ const Onboarding = () => {
                   </span>
               </Button>
             )}
-            <Button variant="secondary" onClick={()=> setStep(step > 1 ? step - 1 : 1)} className="max-lg:flex-1 lg:px-10">
+            <Button onClick={handleNext} className="max-lg:flex-1 lg:px-10">
                   <span className="flex items-center justify-center gap-2">
-                    <ArrowLeft className="w-5 h-5" />
-                    Back
+                    {step === totalSteps ? 'Get Started' : 'Next'}
+                    <ArrowRight className="w-5 h-5" />
+
                   </span>
               </Button>
           </div>
