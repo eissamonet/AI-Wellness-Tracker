@@ -88,8 +88,8 @@ const Onboarding = () => {
                   </div>
                 </div>
                   <div className="flex flex-col gap-4 max-w-2xl">
-                    <Input label='Weight' type='number' className="max-w-2xl" value={formData.weight}
-                    onChange={(v)=>updateField('weight', v)} placeholder="Enter Your Weight" min={30} max={300} required/>
+                    <Input label='Weight (lb)' type='number' value={formData.weight}
+                    onChange={(v)=>updateField('weight', v)} placeholder="Enter Your Weight" min={20} max={300} required/>
                   </div>
                </div>
             )}
