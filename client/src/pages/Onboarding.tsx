@@ -1,6 +1,6 @@
 import { ArrowLeft, ArrowRight, PersonStanding, ScaleIcon, Target, User } from "lucide-react";
 import { useState } from "react";
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { useAppContext } from "../context/AppContext";
 import type { ProfileFormData } from "../types";
 import Input from "../components/ui/Input";
@@ -26,7 +26,13 @@ const Onboarding = () => {
   ) => {
     setFormData({ ...formData, [field]: value });
   };
-    const handleNext =async () => {}
+    const handleNext = async () => {
+      if(step === 1){
+        if(!formData.age || Number(formData.age) < 13 || Number(formData.age) > 120){
+          return toast('Age is Required')
+      }
+    }
+  }
 
 
   return (
