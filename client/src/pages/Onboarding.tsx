@@ -2,9 +2,10 @@ import { ArrowLeft, ArrowRight, PersonStanding, ScaleIcon, Target, User } from "
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { useAppContext } from "../context/AppContext";
-import type { ProfileFormData } from "../types";
+import type { ProfileFormData, UserData } from "../types";
 import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
+import mockApi from "../assets/mockApi";
 
 const Onboarding = () => {
   const [step, setStep] = useState(1);
@@ -31,6 +32,22 @@ const Onboarding = () => {
         if(!formData.age || Number(formData.age) < 13 || Number(formData.age) > 120){
           return toast('Age is Required')
       }
+    }
+    if(step <totalSteps){
+      setSteps(step + 1);
+    } else {
+      const userData = {
+        ...formData,
+        age: formData.age,
+        weight: formData.weight,
+        height: formData.height ? formData.height : null,
+        createdAt: new Date().toISOString(),
+      };
+      localStorage.setItem('fitnessUser', JSON.stringify(userData))
+      await mockApi.user.update(user?.id || "", userData as unknown as Partial<UserData>)
+      toast.success('Profile Updated!')
+      setOnboardingCompleted(true);
+      fetchUser(user?.token || "");
     }
   }
 
