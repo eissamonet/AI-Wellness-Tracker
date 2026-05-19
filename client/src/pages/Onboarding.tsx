@@ -193,7 +193,7 @@ const Onboarding = () => {
                     key={option.value}
                     onClick={()=>{
                       const age = Number(formData.age);
-                      const range = ageRanges.find(()=>age <= range.max) || ageRanges[ageRanges.length - 1]
+                      const range = ageRanges.find((r)=>age <= r.max) || ageRanges[ageRanges.length - 1]
 
                     let intake = range.maintain;
                     let burn = range.burn;
@@ -213,12 +213,18 @@ const Onboarding = () => {
                       dailyCalorieBurn: burn,
                     })
                   }}
-                  className={`onboarding-option-btn ${formData.goal === option.value} && 'ring-emerald-500'`}>
+                  className={`onboarding-option-btn ${formData.goal === option.value && 'ring-2 ring-emerald-500'}`}>
                     <span className="text-base text-slate-700 dark:text-slate-200">{option.label}</span>
                   </button>
                 ))}
               </div>
 
+              <div className="border-t border-slate-200 dark:border-slate-700 my-6 max-w-lg"></div>
+
+              {/* daily targets */}
+              <div className="space-y-8 max-w-lg">
+                <h3></h3>
+              </div>
             </div>
           )}
         </div>
