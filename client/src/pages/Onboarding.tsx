@@ -189,7 +189,7 @@ const Onboarding = () => {
               {/* options */}
               <div className="space-y-4 max-w-lg">
                 {goalOptions.map((option) => (
-                  <button>
+                  <button className={`onboarding-option-btn`}>
                     <span className="text-base text-slate-700 dark:text-slate-200">{option.label}</span>
                   </button>
                 ))}
