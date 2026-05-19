@@ -6,6 +6,7 @@ import type { ProfileFormData, UserData } from "../types";
 import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
 import mockApi from "../assets/mockApi";
+import { goalOptions } from "../assets/assets";
 
 const Onboarding = () => {
   const [step, setStep] = useState(1);
@@ -187,7 +188,11 @@ const Onboarding = () => {
 
               {/* options */}
               <div className="space-y-4 max-w-lg">
-                {}
+                {goalOptions.map((option) => (
+                  <button>
+                    <span className="text-base text-slate-700 dark:text-slate-200">{option.label}</span>
+                  </button>
+                ))}
               </div>
 
             </div>
