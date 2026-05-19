@@ -6,7 +6,7 @@ import type { ProfileFormData, UserData } from "../types";
 import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
 import mockApi from "../assets/mockApi";
-import { goalOptions } from "../assets/assets";
+import { ageRanges, goalOptions } from "../assets/assets";
 
 const Onboarding = () => {
   const [step, setStep] = useState(1);
@@ -189,7 +189,31 @@ const Onboarding = () => {
               {/* options */}
               <div className="space-y-4 max-w-lg">
                 {goalOptions.map((option) => (
-                  <button className={`onboarding-option-btn`}>
+                  <button
+                    key={option.value}
+                    onClick={()=>{
+                      const age = Number(formData.age);
+                      const range = ageRanges.find(()=>age <= range.max) || ageRanges[ageRanges.length - 1]
+
+                    let intake = range.maintain;
+                    let burn = range.burn;
+
+                    if(option.value === 'lose'){
+                      intake -= 400;
+                      burn += 100;
+                    }else if(option.value === 'gain'){
+                      intake += 500;
+                      burn -= 100;
+                    }
+
+                    setFormData({
+                      ...formData,
+                      goal: option.value as 'lose' | 'maintain' | 'gain',
+                      dailyCalorieIntake: intake,
+                      dailyCalorieBurn: burn,
+                    })
+                  }}
+                  className={`onboarding-option-btn ${formData.goal === option.value} && 'ring-emerald-500'`}>
                     <span className="text-base text-slate-700 dark:text-slate-200">{option.label}</span>
                   </button>
                 ))}
