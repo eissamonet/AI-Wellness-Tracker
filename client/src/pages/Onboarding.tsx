@@ -185,6 +185,10 @@ const Onboarding = () => {
                 </div>
               </div>
 
+              {/* options */}
+              <div className="space-y-4 max-w-lg">
+                {}
+              </div>
 
             </div>
           )}
