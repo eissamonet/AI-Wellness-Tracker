@@ -228,7 +228,10 @@ const Onboarding = () => {
 
                 <div className="space-y-6">
                   <Slider label="Daily Calorie Intake" min={120} max={4000} step={50} value={formData.dailyCalorieIntake}
-                  onChange={(v)=>updateField('dailyCalorieIntake', v)} unit="kcal" infoText="The total calories you plan to consume each day" />
+                  onChange={(v)=>updateField('dailyCalorieIntake', v)} unit="cal" infoText="The total calories you plan to consume each day" />
+
+                  <Slider label="Daily Calorie Burn" min={100} max={2000} step={50} value={formData.dailyCalorieBurn}
+                  onChange={(v)=>updateField('dailyCalorieBurn', v)} unit="cal" infoText="The total calories you plan to burn each day" />
                 </div>
               </div>
             </div>
