@@ -223,7 +223,7 @@ const Onboarding = () => {
 
               {/* daily targets */}
               <div className="space-y-8 max-w-lg">
-                <h3></h3>
+                <h3 className="text-md font-medium text-slate-800 dark:text-white mb-4">Daily Targets</h3>
               </div>
             </div>
           )}
