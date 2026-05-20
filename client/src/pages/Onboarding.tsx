@@ -7,6 +7,7 @@ import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
 import mockApi from "../assets/mockApi";
 import { ageRanges, goalOptions } from "../assets/assets";
+import Slider from "../components/ui/Slider";
 
 const Onboarding = () => {
   const [step, setStep] = useState(1);
@@ -224,6 +225,11 @@ const Onboarding = () => {
               {/* daily targets */}
               <div className="space-y-8 max-w-lg">
                 <h3 className="text-md font-medium text-slate-800 dark:text-white mb-4">Daily Targets</h3>
+
+                <div className="space-y-6">
+                  <Slider label="Daily Calorie Intake" min={120} max={4000} step={50} value={formData.dailyCalorieIntake}
+                  onChange={(v)=>updateField('dailyCalorieIntake', v)} unit="kcal" infoText="The total calories you plan to consume each day" />
+                </div>
               </div>
             </div>
           )}
