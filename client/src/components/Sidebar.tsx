@@ -1,5 +1,6 @@
 import { ActivityIcon, HomeIcon, PersonStandingIcon, UserIcon, UtensilsIcon } from "lucide-react"
 import { useTheme } from "../context/ThemeContext"
+import { NavLink } from "react-router-dom"
 
 const Sidebar = () => {
 
@@ -20,6 +21,15 @@ const Sidebar = () => {
             <PersonStandingIcon className="size-7 text-white"/>
           </div>
           <h1 className="text-2xl font-bold text-slate-800 dark:text-white">Wellness Tracker</h1>
+        </div>
+
+        <div className="flex flex-col gap-2">
+           {navItems.map(item => (
+            <NavLink key={item.path} to={item.path}>
+                <item.icon className="size-5"/>
+                <span className="text-base">{item.label}</span>
+            </NavLink>
+           ))}
         </div>
     </nav>
   )
