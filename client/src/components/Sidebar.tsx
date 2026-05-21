@@ -24,9 +24,10 @@ const Sidebar = () => {
         </div>
 
         <div className="flex flex-col gap-2">
-           {navItems.map(item => (
+           {navItems.map((item) => (
             <NavLink key={item.path} to={item.path}
-            className={({ isActive})=> `flex items-center gap-3 px-4 py-2.5 border-1-3 trasnition-all duration-200`}>
+            className={({ isActive })=> `flex items-center gap-3 px-4 py-2.5 border-1-3 transition-all duration-200 ${isActive ?
+            'bg-emerald-50 dark:bg-emerald-900/10 text-emerald-600 dark:text-emerald-400 font-medium' : 'text-slate-500 dark:text-slate-400 hover:bh-slate-50 dark:hover:bg-slate-800 hover:text-slate-700 dark:hover:text-slate-200 border-transparent'}`}>
                 <item.icon className="size-5"/>
                 <span className="text-base">{item.label}</span>
             </NavLink>
