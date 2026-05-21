@@ -1,4 +1,5 @@
 import { ActivityIcon, HomeIcon, UserIcon, UtensilsIcon } from "lucide-react"
+import { useTheme } from "../context/ThemeContext"
 
 const Sidebar = () => {
 
@@ -9,10 +10,13 @@ const Sidebar = () => {
         {path: '/profile', label: 'Profile', icon: UserIcon},
     ]
 
+    const {theme, toggleTheme} = useTheme()
+
   return (
-    <div>
+    <nav className="hidden lg:flex flex-col w-64 bg-white dark:bg-slate-900 border-r border-slate-100 dark:border-slate-800
+    p-6 transition-colors duration-200">
         Sidebar
-    </div>
+    </nav>
   )
 }
 
