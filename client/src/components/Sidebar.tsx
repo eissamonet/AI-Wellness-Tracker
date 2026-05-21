@@ -19,7 +19,7 @@ const Sidebar = () => {
           <div className="size-10 rounded-xl bg-emerald-500 flex items-center justify-center">
             <PersonStandingIcon className="size-7 text-white"/>
           </div>
-          <h1>Wellness Tracker</h1>
+          <h1 className="text-2xl font-bold text-slate-800 dark:text-white">Wellness Tracker</h1>
         </div>
     </nav>
   )
