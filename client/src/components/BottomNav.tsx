@@ -1,11 +1,12 @@
-import React from 'react'
-
 const BottomNav = () => {
-  return (
-    <div>
+  const navItems = [
+    { path: "/", label: "Home", icon: HomeIcon },
+    { path: "/food", label: "Food", icon: UtensilsIcon },
+    { path: "/activity", label: "Activity", icon: ActivityIcon },
+    { path: "/profile", label: "Profile", icon: UserIcon },
+  ];
 
-    </div>
-  )
-}
+  return <div></div>;
+};
 
-export default BottomNav
+export default BottomNav;
