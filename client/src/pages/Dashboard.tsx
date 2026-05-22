@@ -1,13 +1,14 @@
 import { useState } from "react"
 import { getMotivationalMessage } from "../assets/assets"
 import { useAppContext } from "../context/AppContext"
-import { FoodEntry } from "../types"
+import type { FoodEntry, ActivityEntry } from "../types"
 
 
 const Dashboard = () => {
 
   const {user, allActivityLogs, allFoodLogs} = useAppContext()
   const[todayFood, setTodayFood] = useState<FoodEntry>([])
+  const[todayActivities, settodayActivities] = useState<ActivityEntry>([])
 
   const motivation = getMotivationalMessage()
 
