@@ -10,7 +10,7 @@ const Layout = () => {
         <div className="flex-1 overflow-y-scroll">
           <Outlet />
         </div>
-        <BottomNav />
+      <BottomNav />
     </div>
   )
 }

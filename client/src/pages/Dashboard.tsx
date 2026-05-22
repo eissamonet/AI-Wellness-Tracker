@@ -2,8 +2,11 @@
 
 const Dashboard = () => {
   return (
-    <div>
-       Dashboard
+    <div className="page-containter">
+       {/* header */}
+       <div className="dashboard-header">
+
+       </div>
     </div>
   )
 }
