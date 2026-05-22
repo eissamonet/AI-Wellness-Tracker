@@ -14,7 +14,7 @@ const Dashboard = () => {
 
           {/* motivation card */}
           <div className="mt-6 bg-white/20 backdrop-blur-sm rounded-2xl p-4">
-            <div>
+            <div className="flex items-center gap-3">
               <span></span>
               <p></p>
             </div>
