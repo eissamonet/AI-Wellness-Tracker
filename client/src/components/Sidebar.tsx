@@ -35,7 +35,9 @@ const Sidebar = () => {
         </div>
 
         <div>
-           <button className="flex items-center gap-3 px-4 py-2.5 w-full text-slate-500 dark:text-slate-400
+           <button
+           onClick={toggleTheme}
+           className="flex items-center gap-3 px-4 py-2.5 w-full text-slate-500 dark:text-slate-400
            hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-slate-700 dark:hover:text-slate-200 rounded-lg transition-colors
            duration-200 cursor-pointer">
             {theme === 'light' ? <MoonIcon className="size-5" /> : <SunIcon className="size-5" />}
