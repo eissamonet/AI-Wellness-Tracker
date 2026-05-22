@@ -16,6 +16,7 @@ const BottomNav = () => {
         {navItems.map((item) => (
            <NavLink>
              <item.icon className="size-5.5" />
+             <span className="text-xs font-medium">{item.label}</span>
            </NavLink>
         ))}
 
