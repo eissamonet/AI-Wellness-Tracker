@@ -34,7 +34,7 @@ const Sidebar = () => {
            ))}
         </div>
 
-        <div>
+        <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800">
            <button
            onClick={toggleTheme}
            className="flex items-center gap-3 px-4 py-2.5 w-full text-slate-500 dark:text-slate-400
