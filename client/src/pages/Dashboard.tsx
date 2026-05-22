@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { getMotivationalMessage } from "../assets/assets"
 import { useAppContext } from "../context/AppContext"
 import type { FoodEntry, ActivityEntry } from "../types"
@@ -19,6 +19,14 @@ const Dashboard = () => {
     setTodayFood(foodData)
     const activityData = allActivityLogs.filter((a:ActivityEntry)=> a.createdAt?.split("T")[0] === today)
     setTodayActivities(activityData)
+  }
+
+  useEffect(() => {
+    (()=>{loadUserData()})();
+
+  },[allActivityLogs, allFoodLogs])
+
+  const totoalCalories: number = todayFood.reduce((sum, item)=>)
 
 
   const motivation = getMotivationalMessage()
