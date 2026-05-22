@@ -1,9 +1,15 @@
+import { useState } from "react"
+import { getMotivationalMessage } from "../assets/assets"
 import { useAppContext } from "../context/AppContext"
+import { FoodEntry } from "../types"
 
 
 const Dashboard = () => {
 
   const {user, allActivityLogs, allFoodLogs} = useAppContext()
+  const[todayFood, setTodayFood] = useState<FoodEntry>([])
+
+  const motivation = getMotivationalMessage()
 
   return (
     <div className="page-containter">
