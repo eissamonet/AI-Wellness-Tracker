@@ -10,6 +10,8 @@ const Dashboard = () => {
   const[todayFood, setTodayFood] = useState<FoodEntry>([])
   const[todayActivities, settodayActivities] = useState<ActivityEntry>([])
 
+  const DAILY_CALORIE_LIMIT: number = user?.dailyCalorieIntake || 2000;
+
   const motivation = getMotivationalMessage()
 
   return (
