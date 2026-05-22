@@ -8,9 +8,18 @@ const Dashboard = () => {
 
   const {user, allActivityLogs, allFoodLogs} = useAppContext()
   const[todayFood, setTodayFood] = useState<FoodEntry>([])
-  const[todayActivities, settodayActivities] = useState<ActivityEntry>([])
+  const[todayActivities, setTodayActivities] = useState<ActivityEntry>([])
 
   const DAILY_CALORIE_LIMIT: number = user?.dailyCalorieIntake || 2000;
+
+  // load user data
+  const loadUserData = () => {
+    const today = new Date().toISOString().split("T")[0];
+    const foodData = allFoodLogs.filter((f:FoodEntry)=> f.createdAt?.split("T")[0] === today)
+    setTodayFood(foodData)
+    const activityData = allActivityLogs.filter((a:ActivityEntry)=> a.createdAt?.split("T")[0] === today)
+    setTodayActivities(activityData)
+
 
   const motivation = getMotivationalMessage()
 
