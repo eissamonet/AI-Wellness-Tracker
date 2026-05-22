@@ -1,4 +1,4 @@
-import { ActivityIcon, HomeIcon, PersonStandingIcon, UserIcon, UtensilsIcon } from "lucide-react"
+import { ActivityIcon, HomeIcon, MoonIcon, PersonStandingIcon, SunIcon, UserIcon, UtensilsIcon } from "lucide-react"
 import { useTheme } from "../context/ThemeContext"
 import { NavLink } from "react-router-dom"
 
@@ -32,6 +32,13 @@ const Sidebar = () => {
                 <span className="text-base">{item.label}</span>
             </NavLink>
            ))}
+        </div>
+
+        <div>
+           <button>
+            {theme === 'light' ? <MoonIcon className="size-5" /> : <SunIcon className="size-5" />}
+            <span>{theme === 'light' ? 'Dark Mode' : 'Light Mode'}</span>
+           </button>
         </div>
     </nav>
   )
