@@ -77,7 +77,7 @@ const Dashboard = () => {
           <div></div>
           <ProgressBar value={totoalCalories} max={DAILY_CALORIE_LIMIT} />
 
-          <div></div>
+          <div className="flex items-center justify-between mb-4"></div>
 
           <div></div>
           <ProgressBar value={totalBurned} max={user?.dailyCalorieBurn || 400} />
