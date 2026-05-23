@@ -89,8 +89,8 @@ const Dashboard = () => {
 
             </div>
             <div className="text-right">
-              <p>Limit</p>
-              <p>{DAILY_CALORIE_LIMIT}</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Limit</p>
+              <p className="text-2xl font-bold text-slate-800 dark:text-white">{DAILY_CALORIE_LIMIT}</p>
             </div>
           </div>
           <ProgressBar value={totalCalories} max={DAILY_CALORIE_LIMIT} />
