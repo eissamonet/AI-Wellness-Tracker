@@ -26,8 +26,13 @@ const Dashboard = () => {
 
   },[allActivityLogs, allFoodLogs])
 
-  const totoalCalories: number = todayFood.reduce((sum, item)=>)
+  const totoalCalories: number = todayFood.reduce((sum, item)=> sum + item.calories, 0)
 
+  const remainingCalories: number = DAILY_CALORIE_LIMIT - totoalCalories;
+
+  const totalActiveMinutes: number = todayActivities.reduce((sum, item)=> sum + item.duration, 0)
+
+  const totalBurned: number = todayActivities.reduce((sum, item)=> sum + (item.calories || 0), 0)
 
   const motivation = getMotivationalMessage()
 
