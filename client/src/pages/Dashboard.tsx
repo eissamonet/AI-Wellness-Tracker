@@ -77,7 +77,10 @@ const Dashboard = () => {
         <Card className="shadow-lg col-span-2">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
-              <HamburgerIcon className="w-6 h-6 text-orange-500" />
+              <div>
+                <HamburgerIcon className="w-6 h-6 text-orange-500" />
+              </div>
+
             </div>
             <div className="text-right">
               <p>Limit</p>
