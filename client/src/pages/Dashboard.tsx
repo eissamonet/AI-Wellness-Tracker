@@ -81,10 +81,10 @@ const Dashboard = () => {
                 <HamburgerIcon className="w-6 h-6 text-orange-500" />
               </div>
               <div>
-                <p>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
                   Calories Consumed
                 </p>
-                <p>{totalCalories}</p>
+                <p className="text-2xl font-bold text-slate-800 dark:text-white">{totalCalories}</p>
               </div>
 
             </div>
