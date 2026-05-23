@@ -32,12 +32,12 @@ const Dashboard = () => {
     })();
   }, [allActivityLogs, allFoodLogs]);
 
-  const totoalCalories: number = todayFood.reduce(
+  const totalCalories: number = todayFood.reduce(
     (sum, item) => sum + item.calories,
     0,
   );
 
-  const remainingCalories: number = DAILY_CALORIE_LIMIT - totoalCalories;
+  const remainingCalories: number = DAILY_CALORIE_LIMIT - totalCalories;
 
   const totalActiveMinutes: number = todayActivities.reduce(
     (sum, item) => sum + item.duration,
@@ -50,7 +50,7 @@ const Dashboard = () => {
   );
 
   const motivation = getMotivationalMessage(
-    totoalCalories,
+    totalCalories,
     totalActiveMinutes,
     DAILY_CALORIE_LIMIT,
   );
@@ -84,7 +84,7 @@ const Dashboard = () => {
                 <p>
                   Calories Consumed
                 </p>
-                <p>{totoalCalories}</p>
+                <p>{totalCalories}</p>
               </div>
 
             </div>
@@ -93,7 +93,7 @@ const Dashboard = () => {
               <p>{DAILY_CALORIE_LIMIT}</p>
             </div>
           </div>
-          <ProgressBar value={totoalCalories} max={DAILY_CALORIE_LIMIT} />
+          <ProgressBar value={totalCalories} max={DAILY_CALORIE_LIMIT} />
 
           <div className="flex items-center justify-between mb-4"></div>
 
