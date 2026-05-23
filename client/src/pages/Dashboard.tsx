@@ -34,7 +34,7 @@ const Dashboard = () => {
 
   const totalBurned: number = todayActivities.reduce((sum, item)=> sum + (item.calories || 0), 0)
 
-  const motivation = getMotivationalMessage()
+  const motivation = getMotivationalMessage(totoalCalories, totalActiveMinutes, DAILY_CALORIE_LIMIT)
 
   return (
     <div className="page-containter">
