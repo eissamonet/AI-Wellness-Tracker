@@ -46,8 +46,8 @@ const Dashboard = () => {
           {/* motivation card */}
           <div className="mt-6 bg-white/20 backdrop-blur-sm rounded-2xl p-4">
             <div className="flex items-center gap-3">
-              <span></span>
-              <p></p>
+              <span className="text-3xl">{motivation.emoji}</span>
+              <p className="text-white font-medium">{motivation.text}</p>
             </div>
           </div>
 
