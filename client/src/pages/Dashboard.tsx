@@ -75,7 +75,13 @@ const Dashboard = () => {
         {/* calories card */}
         <Card className="shadow-lg col-span-2">
           <div className="flex items-center justify-between mb-4">
+            <div>
 
+            </div>
+            <div className="text-right">
+              <p>Limit</p>
+              <p>{DAILY_CALORIE_LIMIT} kcal</p>
+            </div>
           </div>
           <ProgressBar value={totoalCalories} max={DAILY_CALORIE_LIMIT} />
 
