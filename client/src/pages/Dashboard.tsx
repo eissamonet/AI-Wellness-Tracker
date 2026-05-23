@@ -96,7 +96,11 @@ const Dashboard = () => {
           <ProgressBar value={totalCalories} max={DAILY_CALORIE_LIMIT} />
 
           <div className="mt-4 flex justify-between items-center">
-            <div></div>
+            <div>
+              <span>
+                {remainingCalories >= 0}
+              </span>
+            </div>
             <span className="text-sm text-slate-400">{Math.round((totalCalories / DAILY_CALORIE_LIMIT) * 100)}%</span>
           </div>
 
