@@ -4,6 +4,7 @@ import { useAppContext } from "../context/AppContext";
 import type { FoodEntry, ActivityEntry } from "../types";
 import Card from "../components/ui/Card";
 import ProgressBar from "../components/ui/ProgressBar";
+import { HamburgerIcon } from "lucide-react";
 
 const Dashboard = () => {
   const { user, allActivityLogs, allFoodLogs } = useAppContext();
@@ -75,12 +76,12 @@ const Dashboard = () => {
         {/* calories card */}
         <Card className="shadow-lg col-span-2">
           <div className="flex items-center justify-between mb-4">
-            <div>
-
+            <div className="flex items-center gap-3">
+              <HamburgerIcon className="w-6 h-6 text-orange-500" />
             </div>
             <div className="text-right">
               <p>Limit</p>
-              <p>{DAILY_CALORIE_LIMIT} kcal</p>
+              <p>{DAILY_CALORIE_LIMIT}</p>
             </div>
           </div>
           <ProgressBar value={totoalCalories} max={DAILY_CALORIE_LIMIT} />
