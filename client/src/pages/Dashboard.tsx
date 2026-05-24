@@ -3,7 +3,7 @@ import { getMotivationalMessage } from "../assets/assets";
 import { useAppContext } from "../context/AppContext";
 import type { FoodEntry, ActivityEntry } from "../types";
 import Card from "../components/ui/Card";
-import { FlameIcon, HamburgerIcon } from "lucide-react";
+import { Activity, FlameIcon, HamburgerIcon } from "lucide-react";
 import ProgressBar from "../components/ui/ProgressBar";
 
 const Dashboard = () => {
@@ -127,6 +127,19 @@ const Dashboard = () => {
           </div>
           <ProgressBar value={totalBurned} max={user?.dailyCalorieBurn || 400} />
         </Card>
+
+        {/* stats row */}
+        <div className="dashboard-card-grid">
+          {/* active minutes */}
+          <Card>
+            <div className="flex items-center gap-3 mb-3">
+              <div>
+                <Activity className="w-5 h-5 text-blue-500" />
+              </div>
+              <p>Active</p>
+            </div>
+          </Card>
+        </div>
       </div>
     </div>
   );
