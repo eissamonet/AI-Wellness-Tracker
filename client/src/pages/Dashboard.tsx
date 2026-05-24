@@ -3,7 +3,7 @@ import { getMotivationalMessage } from "../assets/assets";
 import { useAppContext } from "../context/AppContext";
 import type { FoodEntry, ActivityEntry } from "../types";
 import Card from "../components/ui/Card";
-import { HamburgerIcon } from "lucide-react";
+import { FlameIcon, HamburgerIcon } from "lucide-react";
 import ProgressBar from "../components/ui/ProgressBar";
 
 const Dashboard = () => {
@@ -110,19 +110,19 @@ const Dashboard = () => {
           <div className="flex items-center justify-between mb-4">
              <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center">
-                <HamburgerIcon className="w-6 h-6 text-orange-500" />
+                <FlameIcon className="w-6 h-6 text-orange-500" />
               </div>
               <div>
                 <p className="text-sm text-slate-500 dark:text-slate-400">
-                  Calories Consumed
+                  Calories Burned
                 </p>
-                <p className="text-2xl font-bold text-slate-800 dark:text-white">{totalCalories}</p>
+                <p className="text-2xl font-bold text-slate-800 dark:text-white">{totalBurned}</p>
               </div>
 
             </div>
             <div className="text-right">
-              <p className="text-sm text-slate-500 dark:text-slate-400">Limit</p>
-              <p className="text-2xl font-bold text-slate-800 dark:text-white">{DAILY_CALORIE_LIMIT}</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">Goal</p>
+              <p className="text-2xl font-bold text-slate-800 dark:text-white">{user?.dailyCalorieBurn || 400}</p>
             </div>
           </div>
           <ProgressBar value={totalBurned} max={user?.dailyCalorieBurn || 400} />
