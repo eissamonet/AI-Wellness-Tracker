@@ -108,8 +108,22 @@ const Dashboard = () => {
           <div className="border-t border-slate-100 dark:border-slate-800 my-4"></div>
 
           <div className="flex items-center justify-between mb-4">
-            <div></div>
-            <div></div>
+             <div className="flex items-center gap-3">
+              <div className="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center">
+                <HamburgerIcon className="w-6 h-6 text-orange-500" />
+              </div>
+              <div>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  Calories Consumed
+                </p>
+                <p className="text-2xl font-bold text-slate-800 dark:text-white">{totalCalories}</p>
+              </div>
+
+            </div>
+            <div className="text-right">
+              <p className="text-sm text-slate-500 dark:text-slate-400">Limit</p>
+              <p className="text-2xl font-bold text-slate-800 dark:text-white">{DAILY_CALORIE_LIMIT}</p>
+            </div>
           </div>
           <ProgressBar value={totalBurned} max={user?.dailyCalorieBurn || 400} />
         </Card>
