@@ -108,9 +108,9 @@ const Dashboard = () => {
           <div className="border-t border-slate-100 dark:border-slate-800 my-4"></div>
 
           <div className="flex items-center justify-between mb-4">
-
+            <div></div>
+            <div></div>
           </div>
-          <p>{totalBurned}</p>
           <ProgressBar value={totalBurned} max={user?.dailyCalorieBurn || 400} />
         </Card>
       </div>
