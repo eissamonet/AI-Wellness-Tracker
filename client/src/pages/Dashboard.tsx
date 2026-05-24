@@ -3,22 +3,20 @@ import { getMotivationalMessage } from "../assets/assets";
 import { useAppContext } from "../context/AppContext";
 import type { FoodEntry, ActivityEntry } from "../types";
 import Card from "../components/ui/Card";
-import ProgressBar from "../components/ui/ProgressBar";
 import { HamburgerIcon } from "lucide-react";
+import ProgressBar from "../components/ui/ProgressBar";
 
 const Dashboard = () => {
   const { user, allActivityLogs, allFoodLogs } = useAppContext();
-  const [todayFood, setTodayFood] = useState<FoodEntry>([]);
-  const [todayActivities, setTodayActivities] = useState<ActivityEntry>([]);
+  const [todayFood, setTodayFood] = useState<FoodEntry[]>([]);
+  const [todayActivities, setTodayActivities] = useState<ActivityEntry[]>([]);
 
   const DAILY_CALORIE_LIMIT: number = user?.dailyCalorieIntake || 2000;
 
   // load user data
   const loadUserData = () => {
     const today = new Date().toISOString().split("T")[0];
-    const foodData = allFoodLogs.filter(
-      (f: FoodEntry) => f.createdAt?.split("T")[0] === today,
-    );
+    const foodData = allFoodLogs
     setTodayFood(foodData);
     const activityData = allActivityLogs.filter(
       (a: ActivityEntry) => a.createdAt?.split("T")[0] === today,
@@ -56,7 +54,7 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="page-containter">
+    <div className="page-container">
       {/* header */}
       <div className="dashboard-header">
         <p className="text-emerald-100 text-sm font-medium">Welcome Back!</p>
@@ -93,6 +91,7 @@ const Dashboard = () => {
               <p className="text-2xl font-bold text-slate-800 dark:text-white">{DAILY_CALORIE_LIMIT}</p>
             </div>
           </div>
+
           <ProgressBar value={totalCalories} max={DAILY_CALORIE_LIMIT} />
 
           <div className="mt-4 flex justify-between items-center">
@@ -111,6 +110,7 @@ const Dashboard = () => {
           <div className="flex items-center justify-between mb-4">
 
           </div>
+          <p>{totalBurned}</p>
           <ProgressBar value={totalBurned} max={user?.dailyCalorieBurn || 400} />
         </Card>
       </div>
