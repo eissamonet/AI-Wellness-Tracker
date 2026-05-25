@@ -3,7 +3,7 @@ import { getMotivationalMessage } from "../assets/assets";
 import { useAppContext } from "../context/AppContext";
 import type { FoodEntry, ActivityEntry } from "../types";
 import Card from "../components/ui/Card";
-import { Activity, FlameIcon, HamburgerIcon } from "lucide-react";
+import { Activity, FlameIcon, HamburgerIcon, ZapIcon } from "lucide-react";
 import ProgressBar from "../components/ui/ProgressBar";
 
 const Dashboard = () => {
@@ -140,6 +140,18 @@ const Dashboard = () => {
             </div>
             <p className="text-2xl font-bold text-slate-800 dark:text-white">{totalActiveMinutes}</p>
             <p className="text-sm text-slate-400">Minutes today</p>
+          </Card>
+
+          {/* activity counts */}
+          <Card>
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center">
+                <ZapIcon className="w-5 h-5 text-purple-500" />
+              </div>
+              <p className="text-sm text-slate-500">Workouts</p>
+            </div>
+            <p className="text-2xl font-bold text-slate-800 dark:text-white">{todayActivities.length}</p>
+            <p className="text-sm text-slate-400">activities logged</p>
           </Card>
         </div>
       </div>
