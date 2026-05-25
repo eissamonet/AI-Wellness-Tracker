@@ -164,10 +164,12 @@ const Dashboard = () => {
                 <TrendingUpIcon className="w-6 h-6 text-emerald-400" />
               </div>
               <div>
-                <p>Your Goal</p>
-                <p>{user.goal === 'lose' && '🔥 Lose Weight'}</p>
-                <p>{user.goal === 'maintain' && '⚖️ Maintain Weight'}</p>
-                <p>{user.goal === 'gain' && '💪 Gain Muscle'}</p>
+                <p className="text-slate-400 text-sm">Your Goal</p>
+                <p className="text-white font-semibold capitalize">
+                {user.goal === 'lose' && '🔥 Lose Weight'}
+                {user.goal === 'maintain' && '⚖️  Maintain Weight'}
+                {user.goal === 'gain' && '💪 Gain Muscle'}
+                </p>
               </div>
             </div>
           </Card>
