@@ -159,7 +159,10 @@ const Dashboard = () => {
         {/* goal card */}
         {user && ( // this card will span both columns on large screens
           <Card className="bg-linear-to-r from-slate-800 to-slate-700">
-
+            <div className="flex items-center gap-4">
+              <div></div>
+              <div></div>
+            </div>
           </Card>
         )}
       </div>
