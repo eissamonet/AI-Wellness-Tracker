@@ -3,7 +3,7 @@ import { getMotivationalMessage } from "../assets/assets";
 import { useAppContext } from "../context/AppContext";
 import type { FoodEntry, ActivityEntry } from "../types";
 import Card from "../components/ui/Card";
-import { Activity, FlameIcon, HamburgerIcon, TrendingUpIcon, ZapIcon } from "lucide-react";
+import { Activity, FlameIcon, HamburgerIcon, ScaleIcon, TrendingUpIcon, ZapIcon } from "lucide-react";
 import ProgressBar from "../components/ui/ProgressBar";
 
 const Dashboard = () => {
@@ -170,6 +170,17 @@ const Dashboard = () => {
                 {user.goal === 'maintain' && '⚖️  Maintain Weight'}
                 {user.goal === 'gain' && '💪 Gain Muscle'}
                 </p>
+              </div>
+            </div>
+          </Card>
+        )}
+
+        {/* body metric card */}
+        {user && user.weight && (
+          <Card>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center">
+                <ScaleIcon className="w-6 h-6 text-emerald-400" />
               </div>
             </div>
           </Card>
