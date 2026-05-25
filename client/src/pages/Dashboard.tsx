@@ -139,7 +139,7 @@ const Dashboard = () => {
               <p className="text-sm text-slate-500">Active</p>
             </div>
             <p className="text-2xl font-bold text-slate-800 dark:text-white">{totalActiveMinutes}</p>
-            <p className="text-sm text-slate-400">Minutes today</p>
+            <p className="text-sm text-slate-400">Minutes Today</p>
           </Card>
 
           {/* activity counts */}
@@ -151,9 +151,17 @@ const Dashboard = () => {
               <p className="text-sm text-slate-500">Workouts</p>
             </div>
             <p className="text-2xl font-bold text-slate-800 dark:text-white">{todayActivities.length}</p>
-            <p className="text-sm text-slate-400">activities logged</p>
+            <p className="text-sm text-slate-400">Activities Logged</p>
           </Card>
         </div>
+
+
+        {/* goal card */}
+        {user && ( // this card will span both columns on large screens
+          <Card className="bg-linear-to-r from-slate-800 to-slate-700">
+
+          </Card>
+        )}
       </div>
     </div>
   );
