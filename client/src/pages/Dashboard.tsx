@@ -139,7 +139,7 @@ const Dashboard = () => {
               <p className="text-sm text-slate-500">Active</p>
             </div>
             <p className="text-2xl font-bold text-slate-800 dark:text-white">{totalActiveMinutes}</p>
-            <p className="text">Minutes today</p>
+            <p className="text-sm text-slate-400">Minutes today</p>
           </Card>
         </div>
       </div>
