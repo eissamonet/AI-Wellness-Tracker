@@ -3,7 +3,7 @@ import { getMotivationalMessage } from "../assets/assets";
 import { useAppContext } from "../context/AppContext";
 import type { FoodEntry, ActivityEntry } from "../types";
 import Card from "../components/ui/Card";
-import { Activity, FlameIcon, HamburgerIcon, ZapIcon } from "lucide-react";
+import { Activity, FlameIcon, HamburgerIcon, TrendingUpIcon, ZapIcon } from "lucide-react";
 import ProgressBar from "../components/ui/ProgressBar";
 
 const Dashboard = () => {
@@ -160,8 +160,15 @@ const Dashboard = () => {
         {user && ( // this card will span both columns on large screens
           <Card className="bg-linear-to-r from-slate-800 to-slate-700">
             <div className="flex items-center gap-4">
-              <div></div>
-              <div></div>
+              <div>
+                <TrendingUpIcon className="w-6 h-6 text-emerald-400" />
+              </div>
+              <div>
+                <p>Your Goal</p>
+                <p>{user.goal === 'lose' && '🔥 Lose Weight'}</p>
+                <p>{user.goal === 'maintain' && '⚖️ Maintain Weight'}</p>
+                <p>{user.goal === 'gain' && '💪 Gain Muscle'}</p>
+              </div>
             </div>
           </Card>
         )}
