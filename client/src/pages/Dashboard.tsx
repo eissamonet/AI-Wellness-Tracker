@@ -187,6 +187,15 @@ const Dashboard = () => {
                 <p className="text-slate-500 text-sm">Your Stats</p>
               </div>
             </div>
+
+            <div className="space-y-4">
+              <div className="flex justify-between items-center">
+                <div>
+
+                </div>
+              </div>
+
+            </div>
           </Card>
         )}
       </div>
