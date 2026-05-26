@@ -194,6 +194,7 @@ const Dashboard = () => {
                   <div className="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-800">
                     <ScaleIcon className="w-4 h-4 text-slate-500" />
                   </div>
+                  <span className="text-sm text-slate-500 dark:text-slate-400">Weight</span>
                 </div>
               </div>
             </div>
