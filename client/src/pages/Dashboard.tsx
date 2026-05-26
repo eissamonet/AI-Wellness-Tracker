@@ -3,7 +3,7 @@ import { getMotivationalMessage } from "../assets/assets";
 import { useAppContext } from "../context/AppContext";
 import type { FoodEntry, ActivityEntry } from "../types";
 import Card from "../components/ui/Card";
-import { Activity, FlameIcon, HamburgerIcon, ScaleIcon, TrendingUpIcon, ZapIcon } from "lucide-react";
+import { Activity, FlameIcon, HamburgerIcon, Ruler, ScaleIcon, TrendingUpIcon, ZapIcon } from "lucide-react";
 import ProgressBar from "../components/ui/ProgressBar";
 
 const Dashboard = () => {
@@ -196,7 +196,20 @@ const Dashboard = () => {
                   </div>
                   <span className="text-sm text-slate-500 dark:text-slate-400">Weight</span>
                 </div>
+                <span className="font-semibold text-slate-700 dark:text-slate-200">{user.weight} kg</span>
+            </div>
+
+            {user.height && (
+              <div className="flex justify-between items-center">
+                <div className="gap-2 flex items-center">
+                  <div className="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-800">
+                    <Ruler className="w-4 h-4 text-slate-500" />
+                  </div>
+                  <span className="text-sm text-slate-500 dark:text-slate-400">Height</span>
+                </div>
+                <span className="font-semibold text-slate-700 dark:text-slate-200">{user.height} cm</span>
               </div>
+            )}
             </div>
           </Card>
         )}
