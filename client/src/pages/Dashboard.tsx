@@ -213,7 +213,9 @@ const Dashboard = () => {
 
             {user.height && (
               <div className="pt-2 border-t border-slate-100 dark:border-slate-800">
+                <div className="flex justify-between items-center mb-2">
 
+                </div>
               </div>
             )}
             </div>
