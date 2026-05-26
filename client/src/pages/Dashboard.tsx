@@ -180,7 +180,11 @@ const Dashboard = () => {
           <Card>
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center">
-                <ScaleIcon className="w-6 h-6 text-emerald-400" />
+                <ScaleIcon className="w-6 h-6 text-indigo-500" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-slate-800 dark:text-white">Body Metrics</h3>
+                <p className="text-slate-500 text-sm">Your Stats</p>
               </div>
             </div>
           </Card>
