@@ -190,8 +190,8 @@ const Dashboard = () => {
 
             <div className="space-y-4">
               <div className="flex justify-between items-center">
-                <div>
-
+                <div className="gap-2 flex items-center">
+                  <ScaleIcon className="w-4 h-4 text-slate-500" />
                 </div>
               </div>
 
