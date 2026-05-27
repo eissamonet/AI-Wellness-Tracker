@@ -231,7 +231,8 @@ const Dashboard = () => {
 
                 {/* bmi scale visual */}
                 <div className="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden flex">
-
+                  <div className="flex-1 bg-blue-400 opacity-30"></div>
+                  <div className="flex-1 bg-emerald-400 opacity-30"></div>
                 </div>
               </div>
             )}
