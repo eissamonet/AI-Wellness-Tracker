@@ -215,6 +215,16 @@ const Dashboard = () => {
               <div className="pt-2 border-t border-slate-100 dark:border-slate-800">
                 <div className="flex justify-between items-center mb-2">
                   <span className="text-sm font-medium text-slate-700 dark:text-slate-300">BMI</span>
+                  {(() => {
+                    const bmi = (user.weight / Math.pow(user.height / 100, 2)).toFixed(1);
+                    const getStatus = (bmi: number) => {
+                      if (bmi < 18.5) return { text: 'Underweight', color: 'text-blue-500', bg: 'bg-blue-500' };
+                      if (bmi < 25) return { text: 'Normal', color: 'text-green-500', bg: 'bg-emerald-500' };
+                      if (bmi < 30) return { text: 'Overweight', color: 'text-orange-500', bg: 'bg-orange-500' };
+
+                      return { text: 'Obese', color: 'text-red-500', bg: 'bg-red-500'};
+                    }
+                  })()}
                 </div>
               </div>
             )}
