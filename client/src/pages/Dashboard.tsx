@@ -224,7 +224,14 @@ const Dashboard = () => {
 
                       return { text: 'Obese', color: 'text-red-500', bg: 'bg-red-500'};
                     }
+                    const status = getStatus(Number(bmi));
+                    return <span className={`text-lg font-bold ${status.color}`}>{bmi}</span>
                   })()}
+                </div>
+
+                {/* bmi scale visual */}
+                <div className="h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden flex">
+
                 </div>
               </div>
             )}
