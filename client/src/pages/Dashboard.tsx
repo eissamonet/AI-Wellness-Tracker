@@ -269,7 +269,7 @@ const Dashboard = () => {
 
         {/* activity and intake graph*/}
         <Card className="col-span-2">
-          <h3>This Week's Progress</h3>
+          <h3 className="font-semibold text-slate-800 dark:text-white mb-2">This Week's Progress</h3>
         </Card>
       </div>
     </div>
