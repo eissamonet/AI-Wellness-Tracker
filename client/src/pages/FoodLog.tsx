@@ -5,7 +5,14 @@ import type { FoodEntry } from "../types";
 const FoodLog = () => {
   const {allFoodLogs, setAllFoodLogs} = useAppContext();
 
-  const [entries, setEntries] = useState<FoodEntry[]>([]);
+  const [entries, setEntries] = useState<FoodEntry[]>([])
+  const [showForm, setShowForm] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    calories: 0,
+    mealType: '',
+  })
+
   return (
     <div>
        FoodLog
