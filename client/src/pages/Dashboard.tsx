@@ -236,6 +236,11 @@ const Dashboard = () => {
                   <div className="flex-1 bg-oranger-400 opacity-30"></div>
                   <div className="flex-1 bg-red-400 opacity-30"></div>
                 </div>
+                <div>
+                  <span>18.5</span>
+                  <span>25</span>
+                  <span>30</span>
+                </div>
               </div>
             )}
             </div>
