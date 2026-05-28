@@ -266,6 +266,11 @@ const Dashboard = () => {
             </div>
           </div>
         </Card>
+
+        {/* activity and intake graph*/}
+        <Card>
+          <h3>This Week's Progress</h3>
+        </Card>
       </div>
     </div>
   );
