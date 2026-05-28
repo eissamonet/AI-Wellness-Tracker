@@ -15,8 +15,13 @@ const FoodLog = () => {
   const [loading, setLoading] = useState(false);
 
   return (
-    <div>
-       FoodLog
+    <div className="page-container">
+       {/* header */}
+       <div className="page-header">
+        <div className="flex items-center justify-between">
+
+        </div>
+       </div>
     </div>
   )
 }
