@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAppContext } from "../context/AppContext"
-import type { FoodEntry } from "../types";
+import type { FormData, FoodEntry } from "../types";
 
 const FoodLog = () => {
   const {allFoodLogs, setAllFoodLogs} = useAppContext();
@@ -12,6 +12,7 @@ const FoodLog = () => {
     calories: 0,
     mealType: '',
   })
+  const [loading, setLoading] = useState(false);
 
   return (
     <div>
