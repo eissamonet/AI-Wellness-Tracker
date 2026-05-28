@@ -246,6 +246,11 @@ const Dashboard = () => {
             </div>
           </Card>
         )}
+
+        {/* quick summary card */}
+        <Card>
+          <h3>Today's Summary</h3>
+        </Card>
       </div>
     </div>
   );
