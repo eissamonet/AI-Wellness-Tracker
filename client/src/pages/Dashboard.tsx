@@ -249,7 +249,7 @@ const Dashboard = () => {
 
         {/* quick summary card */}
         <Card>
-          <h3>Today's Summary</h3>
+          <h3 className="font-semibold text-slate-800 dark:text-white mb-4">Today's Summary</h3>
         </Card>
       </div>
     </div>
