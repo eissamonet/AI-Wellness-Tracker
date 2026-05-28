@@ -250,6 +250,13 @@ const Dashboard = () => {
         {/* quick summary card */}
         <Card>
           <h3 className="font-semibold text-slate-800 dark:text-white mb-4">Today's Summary</h3>
+
+          <div className="space-y-3">
+            <div>
+              <span>Meals Logged</span>
+              <span>{todayFood.length}</span>
+            </div>
+          </div>
         </Card>
       </div>
     </div>
