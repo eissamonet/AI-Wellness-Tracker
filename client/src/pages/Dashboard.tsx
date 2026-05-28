@@ -252,7 +252,7 @@ const Dashboard = () => {
           <h3 className="font-semibold text-slate-800 dark:text-white mb-4">Today's Summary</h3>
 
           <div className="space-y-3">
-            <div>
+            <div className="flex justify-between items-center py-2 border-b border-slate-100 dark:border-slate-800">
               <span>Meals Logged</span>
               <span>{todayFood.length}</span>
             </div>
