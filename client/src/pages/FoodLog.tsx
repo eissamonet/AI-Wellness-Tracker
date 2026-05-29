@@ -3,6 +3,8 @@ import { useAppContext } from "../context/AppContext"
 import type { FormData, FoodEntry } from "../types";
 import Card from "../components/ui/Card";
 import { quickActivitiesFoodLog } from "../assets/assets";
+import Button from "../components/ui/Button";
+import { PlusIcon } from "lucide-react";
 
 const FoodLog = () => {
   const {allFoodLogs, setAllFoodLogs} = useAppContext();
@@ -70,6 +72,11 @@ const FoodLog = () => {
                 ))}
               </div>
             </Card>
+
+            <Button>
+              <PlusIcon className="size-5" />
+              Add Food Entry
+            </Button>
           </div>
         )}
        </div>
