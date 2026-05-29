@@ -4,7 +4,7 @@ import type { FormData, FoodEntry } from "../types";
 import Card from "../components/ui/Card";
 import { quickActivitiesFoodLog } from "../assets/assets";
 import Button from "../components/ui/Button";
-import { PlusIcon } from "lucide-react";
+import { PlusIcon, SparkleIcon } from "lucide-react";
 
 const FoodLog = () => {
   const {allFoodLogs, setAllFoodLogs} = useAppContext();
@@ -75,6 +75,11 @@ const FoodLog = () => {
 
             <Button className="w-full" onClick={() => setShowForm(true)}>
               <PlusIcon className="size-5" />
+              Add Food Entry
+            </Button>
+
+            <Button className="w-full" onClick={}>
+              <SparkleIcon className="size-5" />
               Add Food Entry
             </Button>
           </div>
