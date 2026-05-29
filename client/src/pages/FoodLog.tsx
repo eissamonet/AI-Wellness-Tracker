@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAppContext } from "../context/AppContext"
 import type { FormData, FoodEntry } from "../types";
 import Card from "../components/ui/Card";
@@ -17,6 +17,7 @@ const FoodLog = () => {
     mealType: '',
   })
   const [loading, setLoading] = useState(false)
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const today = new Date().toISOString().split('T')[0];
 
@@ -78,10 +79,11 @@ const FoodLog = () => {
               Add Food Entry
             </Button>
 
-            <Button className="w-full" onClick={}>
+            <Button className="w-full" onClick={() => {inputRef.current?.click()}}>
               <SparkleIcon className="size-5" />
               AI Food Snap
             </Button>
+            <input type="file" accept="image/*" hidden ref={inputRef}/>
           </div>
         )}
        </div>
