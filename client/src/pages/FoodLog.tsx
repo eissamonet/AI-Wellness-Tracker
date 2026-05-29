@@ -57,7 +57,9 @@ const FoodLog = () => {
               <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-3">Quick Add</h3>
               <div className=" flex flex-wrap gap-2">
                 {quickActivitiesFoodLog.map((activity)=> (
-                  <button key={activity.name}>
+                  <button
+                  className="px-4 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-xl
+                  text-sm font-medium text-slate-700 dark:text-slate-200 transition-colors" key={activity.name}>
                     {activity.emoji} {activity.name}
                   </button>
                 ))}
