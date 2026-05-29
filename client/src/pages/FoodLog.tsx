@@ -80,7 +80,7 @@ const FoodLog = () => {
 
             <Button className="w-full" onClick={}>
               <SparkleIcon className="size-5" />
-              Add Food Entry
+              AI Food Snap
             </Button>
           </div>
         )}
