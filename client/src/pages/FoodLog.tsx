@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext"
 import type { FormData, FoodEntry } from "../types";
 import Card from "../components/ui/Card";
+import { quickActivitiesFoodLog } from "../assets/assets";
 
 const FoodLog = () => {
   const {allFoodLogs, setAllFoodLogs} = useAppContext();
@@ -54,6 +55,13 @@ const FoodLog = () => {
           <div className="space-y-4">
             <Card>
               <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-3">Quick Add</h3>
+              <div>
+                {quickActivitiesFoodLog.map((activity)=> (
+                  <button>
+                    {activity.emoji} {activity.name}
+                  </button>
+                ))}
+              </div>
             </Card>
           </div>
         )}
