@@ -23,7 +23,9 @@ const FoodLog = () => {
             <h1 className="text-2xl font-bold text-slate-800 dark:text-white">Food Log</h1>
             <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">Track Your Daily Intake</p>
           </div>
-          <div></div>
+          <div className="text-right">
+            <p className="text-sm text-slate-500 dark:text-slate-400">Today's Total</p>
+          </div>
         </div>
        </div>
     </div>
