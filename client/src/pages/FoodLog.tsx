@@ -18,6 +18,11 @@ const FoodLog = () => {
 
   const totalCalories = entries.reduce((total, entry) => total + entry.calories, 0);
 
+  const loadEntries = () => {
+    const todayEntries = allFoodLogs.filter((entry:FoodEntry) => entry.createdAt?.split('T')[0] === today);
+    setEntries(todayEntries);
+  }
+
   return (
     <div className="page-container">
        {/* header */}
