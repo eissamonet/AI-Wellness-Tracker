@@ -12,7 +12,9 @@ const FoodLog = () => {
     calories: 0,
     mealType: '',
   })
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false)
+
+  const totalCalories = entries.reduce((total, entry) => total + entry.calories, 0);
 
   return (
     <div className="page-container">
@@ -25,7 +27,7 @@ const FoodLog = () => {
           </div>
           <div className="text-right">
             <p className="text-sm text-slate-500 dark:text-slate-400">Today's Total</p>
-            <p className="text-xl font-bold text-emeral-600 dark:text-emerald-400">{} kcal</p>
+            <p className="text-xl font-bold text-emeral-600 dark:text-emerald-400">{totalCalories} kcal</p>
           </div>
         </div>
        </div>
