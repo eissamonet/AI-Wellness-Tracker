@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext"
 import type { FormData, FoodEntry } from "../types";
+import Card from "../components/ui/Card";
 
 const FoodLog = () => {
   const {allFoodLogs, setAllFoodLogs} = useAppContext();
@@ -46,6 +47,18 @@ const FoodLog = () => {
           </div>
         </div>
        </div>
+
+       <div className="page-content-grid">
+        {/* quick add section */}
+        {!showForm && (
+          <div className="space-y-4">
+            <Card>
+              <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-3">Quick Add</h3>
+            </Card>
+          </div>
+        )}
+       </div>
+
     </div>
   )
 }
