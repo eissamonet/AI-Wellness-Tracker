@@ -14,6 +14,8 @@ const FoodLog = () => {
   })
   const [loading, setLoading] = useState(false)
 
+  const today = new Date().toISOString().split('T')[0];
+
   const totalCalories = entries.reduce((total, entry) => total + entry.calories, 0);
 
   return (
