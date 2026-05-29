@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext"
 import type { FormData, FoodEntry } from "../types";
 
@@ -16,12 +16,20 @@ const FoodLog = () => {
 
   const today = new Date().toISOString().split('T')[0];
 
+   const loadEntries = () => {
+    const todaysEntries = allFoodLogs.filter((entry:FoodEntry) => entry.createdAt?.split('T')[0] === today);
+    setEntries(todaysEntries);
+  }
+
   const totalCalories = entries.reduce((total, entry) => total + entry.calories, 0);
 
-  const loadEntries = () => {
-    const todayEntries = allFoodLogs.filter((entry:FoodEntry) => entry.createdAt?.split('T')[0] === today);
-    setEntries(todayEntries);
-  }
+  useEffect(() => {
+    (() => {
+      loadEntries();
+    })()
+  },[allFoodLogs])
+
+
 
   return (
     <div className="page-container">
