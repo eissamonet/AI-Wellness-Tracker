@@ -20,8 +20,8 @@ const FoodLog = () => {
        <div className="page-header">
         <div className="flex items-center justify-between">
           <div>
-            <h1>Food Log</h1>
-            <p>Track Your Daily Intake</p>
+            <h1 className="text-2xl font-bold text-slate-800 dark:text-white">Food Log</h1>
+            <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">Track Your Daily Intake</p>
           </div>
           <div></div>
         </div>
