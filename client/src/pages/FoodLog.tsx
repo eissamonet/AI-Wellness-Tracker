@@ -73,7 +73,7 @@ const FoodLog = () => {
               </div>
             </Card>
 
-            <Button>
+            <Button className="w-full" onClick={() => setShowForm(true)}>
               <PlusIcon className="size-5" />
               Add Food Entry
             </Button>
