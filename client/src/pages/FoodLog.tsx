@@ -5,6 +5,7 @@ import Card from "../components/ui/Card";
 import { quickActivitiesFoodLog } from "../assets/assets";
 import Button from "../components/ui/Button";
 import { Loader2Icon, PlusIcon, SparkleIcon } from "lucide-react";
+import Input from "../components/ui/Input";
 
 const FoodLog = () => {
   const {allFoodLogs, setAllFoodLogs} = useAppContext();
@@ -96,6 +97,10 @@ const FoodLog = () => {
         {showForm && (
           <Card className="border-2 border-emerald-200 dark:border-emerald-800">
             <h3 className="font-semibold text-slate-800 dark:text-white mb-4">New Food Entry</h3>
+            <form className="space-y-4">
+              <Input label="Food Name" value={formData.name} onChange={(v)=>setFormData({...formData, name: v.toString()})}
+              required />
+            </form>
           </Card>
         )}
        </div>
