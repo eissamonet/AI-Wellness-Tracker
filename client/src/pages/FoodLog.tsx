@@ -4,7 +4,7 @@ import type { FormData, FoodEntry } from "../types";
 import Card from "../components/ui/Card";
 import { quickActivitiesFoodLog } from "../assets/assets";
 import Button from "../components/ui/Button";
-import { PlusIcon, SparkleIcon } from "lucide-react";
+import { Loader2Icon, PlusIcon, SparkleIcon } from "lucide-react";
 
 const FoodLog = () => {
   const {allFoodLogs, setAllFoodLogs} = useAppContext();
@@ -84,6 +84,11 @@ const FoodLog = () => {
               AI Food Snap
             </Button>
             <input type="file" accept="image/*" hidden ref={inputRef}/>
+            {loading && (
+              <div>
+                <Loader2Icon />
+              </div>
+            )}
           </div>
         )}
        </div>
