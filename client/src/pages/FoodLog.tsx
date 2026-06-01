@@ -109,7 +109,13 @@ const FoodLog = () => {
               options={mealTypeOptions} placeholder="Select Meal Type" required />
 
               <div className="flex gap-3 pt-2">
+                <Button className="flex-1" type="button" variant="secondary" onClick={()=> setShowForm(false)}>
+                  Cancel
+                </Button>
 
+                <Button type="submit" className="flex-1">
+                  Add Entry
+                </Button>
               </div>
             </form>
           </Card>
