@@ -99,6 +99,9 @@ const FoodLog = () => {
             <h3 className="font-semibold text-slate-800 dark:text-white mb-4">New Food Entry</h3>
             <form className="space-y-4">
               <Input label="Food Name" value={formData.name} onChange={(v)=>setFormData({...formData, name: v.toString()})}
+               placeholder="e.g., Grilled Chicken Salad"required />
+
+              <Input label="Calories" type="number" value={formData.calories} onChange={(v)=>setFormData({...formData, calories: Number(v)})}
               required />
             </form>
           </Card>
