@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useAppContext } from "../context/AppContext"
 import type { FormData, FoodEntry } from "../types";
 import Card from "../components/ui/Card";
-import { quickActivitiesFoodLog } from "../assets/assets";
+import { mealTypeOptions, quickActivitiesFoodLog } from "../assets/assets";
 import Button from "../components/ui/Button";
 import { Loader2Icon, PlusIcon, SparkleIcon } from "lucide-react";
 import Input from "../components/ui/Input";
@@ -105,7 +105,12 @@ const FoodLog = () => {
               <Input label="Calories" type="number" value={formData.calories} onChange={(v)=>setFormData({...formData, calories: Number(v)})}
               placeholder="e.g., 250" required min={1} />
 
-              <Select label="Meal Type" value={formData.mealType} onChange={(v)=>setFormData({...formData, mealType: v.toString()})} />
+              <Select label="Meal Type" value={formData.mealType} onChange={(v)=>setFormData({...formData, mealType: v.toString()})}
+              options={mealTypeOptions} placeholder="Select Meal Type" required />
+
+              <div className="flex gap-3 pt-2">
+
+              </div>
             </form>
           </Card>
         )}
