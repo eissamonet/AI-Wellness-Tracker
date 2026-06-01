@@ -102,7 +102,7 @@ const FoodLog = () => {
                placeholder="e.g., Grilled Chicken Salad"required />
 
               <Input label="Calories" type="number" value={formData.calories} onChange={(v)=>setFormData({...formData, calories: Number(v)})}
-              required />
+              placeholder="e.g., 250" required />
             </form>
           </Card>
         )}
