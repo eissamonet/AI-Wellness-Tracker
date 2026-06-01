@@ -7,6 +7,7 @@ import Button from "../components/ui/Button";
 import { Loader2Icon, PlusIcon, SparkleIcon } from "lucide-react";
 import Input from "../components/ui/Input";
 import Select from "../components/ui/Select";
+import mockApi from "../assets/mockApi";
 
 const FoodLog = () => {
   const {allFoodLogs, setAllFoodLogs} = useAppContext();
@@ -26,6 +27,14 @@ const FoodLog = () => {
    const loadEntries = () => {
     const todaysEntries = allFoodLogs.filter((entry:FoodEntry) => entry.createdAt?.split('T')[0] === today);
     setEntries(todaysEntries);
+  }
+
+  const handleSubmit = async(e: React.FormEvent)=> {
+    e.preventDefault();
+    const {data} = await mockApi.foodLogs.create({data:formData});
+    setAllFoodLogs(prev => [...prev, data]);
+    setFormData({name: '', calories: 0, mealType: ''});
+    setShowForm(false);
   }
 
   const totalCalories = entries.reduce((total, entry) => total + entry.calories, 0);
@@ -98,7 +107,7 @@ const FoodLog = () => {
         {showForm && (
           <Card className="border-2 border-emerald-200 dark:border-emerald-800">
             <h3 className="font-semibold text-slate-800 dark:text-white mb-4">New Food Entry</h3>
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <Input label="Food Name" value={formData.name} onChange={(v)=>setFormData({...formData, name: v.toString()})}
                placeholder="e.g., Grilled Chicken Salad"required />
 
