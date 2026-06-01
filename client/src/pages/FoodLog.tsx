@@ -91,6 +91,13 @@ const FoodLog = () => {
             )}
           </div>
         )}
+
+        {/* add form */}
+        {showForm && (
+          <Card className="border-2 border-emerald-200 dark:border-emerald-800">
+            <h3 className="font-semibold text-slate-800 dark:text-white mb-4">New Food Entry</h3>
+          </Card>
+        )}
        </div>
 
     </div>
