@@ -39,6 +39,16 @@ const FoodLog = () => {
 
   const totalCalories = entries.reduce((total, entry) => total + entry.calories, 0);
 
+  // group entries by meal type
+  const groupedEntries: Record<'breakfast' | 'lunch' | 'dinner' | 'snack',
+  FoodEntry[]> = entries.reduce((acc, entry)=> {
+    if(!acc[entry.mealType]) acc[entry.mealType] = [];
+      acc[entry.mealType.push(entry)
+    }
+    acc[entry.mealType as keyof typeof acc].push(entry);
+    return acc;
+  }, {} as Record<'breakfast' | 'lunch' | 'dinner' | 'snack', FoodEntry[]>);
+
   const handleQuickAdd = (activityName: string) => {
     setFormData({...formData, mealType: activityName})
     setShowForm(true);
@@ -140,7 +150,11 @@ const FoodLog = () => {
             <p className="text-slate-500 dark:text-slate-400 text-sm">Start Tracking Your Meals to Stay on Target!</p>
           </Card>
         ) : (
-          <div></div>
+          <div className="space-y-4">
+            {['breakfast', 'lunch', 'dinner', 'snack'].map((mealType) => {
+             const mealTypeKey = mealType as keyof
+            })}
+          </div>
         )}
 
        </div>
