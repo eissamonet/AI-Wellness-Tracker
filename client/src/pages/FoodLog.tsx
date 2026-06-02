@@ -129,8 +129,9 @@ const FoodLog = () => {
             </form>
           </Card>
         )}
-       </div>
 
+        {/* entries list */}
+       </div>
     </div>
   )
 }
