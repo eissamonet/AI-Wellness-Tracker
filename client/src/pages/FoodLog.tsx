@@ -136,7 +136,8 @@ const FoodLog = () => {
             <div className="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center mx-auto mb-4">
               <UtensilsIcon className="size-8 text-slate-400 dark:text-slate-500"/>
             </div>
-
+            <h3 className="font semibold text-slate-700 dark:text-slate-200 mb-2">No Food Logged Today</h3>
+            <p>Start Tracking Your Meals to Stay on Target!</p>
           </Card>
         ) : (
           <div></div>
