@@ -133,7 +133,7 @@ const FoodLog = () => {
         {/* entries list */}
         {entries.length === 0 ? (
           <Card className="text-center py-12">
-            <div>
+            <div className="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center mx-auto mb-4">
               <UtensilsIcon className="size-8 text-slate-400 dark:text-slate-500"/>
             </div>
 
