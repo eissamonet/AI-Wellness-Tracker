@@ -4,7 +4,7 @@ import type { FormData, FoodEntry } from "../types";
 import Card from "../components/ui/Card";
 import { mealTypeOptions, quickActivitiesFoodLog } from "../assets/assets";
 import Button from "../components/ui/Button";
-import { Loader2Icon, PlusIcon, SparkleIcon } from "lucide-react";
+import { Loader2Icon, PlusIcon, SparkleIcon, UtensilsIcon } from "lucide-react";
 import Input from "../components/ui/Input";
 import Select from "../components/ui/Select";
 import mockApi from "../assets/mockApi";
@@ -131,6 +131,17 @@ const FoodLog = () => {
         )}
 
         {/* entries list */}
+        {entries.length === 0 ? (
+          <Card className="text-center py-12">
+            <div>
+              <UtensilsIcon className="size-8 text-slate-400 dark:text-slate-500"/>
+            </div>
+
+          </Card>
+        ) : (
+          <div></div>
+        )}
+
        </div>
     </div>
   )
