@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useAppContext } from "../context/AppContext"
 import type { FormData, FoodEntry } from "../types";
 import Card from "../components/ui/Card";
-import { mealIcons, mealTypeOptions, quickActivitiesFoodLog } from "../assets/assets";
+import { mealColors, mealIcons, mealTypeOptions, quickActivitiesFoodLog } from "../assets/assets";
 import Button from "../components/ui/Button";
 import { Loader2Icon, PlusIcon, SparkleIcon, UtensilsIcon } from "lucide-react";
 import Input from "../components/ui/Input";
@@ -158,6 +158,22 @@ const FoodLog = () => {
 
             const MealIcon = mealIcons[mealTypeKey];
             const mealCalories = groupedEntries[mealTypeKey].reduce((sum, e) => sum + e.calories, 0);
+
+            return (
+              <Card key={mealType}>
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${mealColors[mealTypeKey]}`}>
+                      <MealIcon className='size-5' />
+                    </div>
+                    <div>
+                      <h3>{mealType}</h3>
+                      <p>{groupedEntries[mealTypeKey].length} items</p>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            )
             })}
           </div>
         )}
