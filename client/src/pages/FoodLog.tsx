@@ -40,15 +40,11 @@ const FoodLog = () => {
   const totalCalories = entries.reduce((total, entry) => total + entry.calories, 0);
 
   // group entries by meal type
-  const groupedEntries: Record<'breakfast' | 'lunch' | 'dinner' | 'snack',
-  FoodEntry[]> = entries.reduce((acc, entry)=> {
-    if(!acc[entry.mealType]) acc[entry.mealType] = [];
-      acc[entry.mealType].push(entry)
-      return acc;
-    }, {} as Record<'breakfast' | 'lunch' | 'dinner' | 'snack', FoodEntry[]>);
-    acc[entry.mealType as keyof typeof acc].push(entry);
+  const groupedEntries: Record<'breakfast' | 'lunch' | 'dinner' | 'snack', FoodEntry[]> = entries.reduce((acc, entry) => {
+    if (!acc[entry.mealType]) acc[entry.mealType] = [];
+    acc[entry.mealType].push(entry);
     return acc;
-  }, {} as Record<'breakfast' | 'lunch' | 'dinner' | 'snack', FoodEntry[]>);
+}, {} as Record<'breakfast' | 'lunch' | 'dinner' | 'snack', FoodEntry[]>);
 
   const handleQuickAdd = (activityName: string) => {
     setFormData({...formData, mealType: activityName})
@@ -177,10 +173,8 @@ const FoodLog = () => {
             })}
           </div>
         )}
-
        </div>
     </div>
   )
-}
 
 export default FoodLog
