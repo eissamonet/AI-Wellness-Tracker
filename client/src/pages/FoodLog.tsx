@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useAppContext } from "../context/AppContext"
 import type { FormData, FoodEntry } from "../types";
 import Card from "../components/ui/Card";
-import { mealTypeOptions, quickActivitiesFoodLog } from "../assets/assets";
+import { mealIcons, mealTypeOptions, quickActivitiesFoodLog } from "../assets/assets";
 import Button from "../components/ui/Button";
 import { Loader2Icon, PlusIcon, SparkleIcon, UtensilsIcon } from "lucide-react";
 import Input from "../components/ui/Input";
@@ -43,8 +43,9 @@ const FoodLog = () => {
   const groupedEntries: Record<'breakfast' | 'lunch' | 'dinner' | 'snack',
   FoodEntry[]> = entries.reduce((acc, entry)=> {
     if(!acc[entry.mealType]) acc[entry.mealType] = [];
-      acc[entry.mealType.push(entry)
-    }
+      acc[entry.mealType].push(entry)
+      return acc;
+    }, {} as Record<'breakfast' | 'lunch' | 'dinner' | 'snack', FoodEntry[]>);
     acc[entry.mealType as keyof typeof acc].push(entry);
     return acc;
   }, {} as Record<'breakfast' | 'lunch' | 'dinner' | 'snack', FoodEntry[]>);
@@ -152,7 +153,11 @@ const FoodLog = () => {
         ) : (
           <div className="space-y-4">
             {['breakfast', 'lunch', 'dinner', 'snack'].map((mealType) => {
-             const mealTypeKey = mealType as keyof
+             const mealTypeKey = mealType as keyof typeof groupedEntries;
+             if(!groupedEntries[mealTypeKey]) return null;
+
+            const MealIcon = mealIcons[mealTypeKey];
+            const mealCalories = groupedEntries[mealTypeKey].reduce((sum, e) => sum + e.calories, 0);
             })}
           </div>
         )}
