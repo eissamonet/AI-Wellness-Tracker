@@ -175,6 +175,6 @@ const FoodLog = () => {
         )}
        </div>
     </div>
-  )
+  )}
 
 export default FoodLog
