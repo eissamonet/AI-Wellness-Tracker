@@ -168,7 +168,7 @@ const FoodLog = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-slate-800 dark:text-white capitalize">{mealType}</h3>
-                      <p>{groupedEntries[mealTypeKey].length} items</p>
+                      <p className="text-sm text-slate-500 dark:text-slate-400">{groupedEntries[mealTypeKey].length} items</p>
                     </div>
                   </div>
                 </div>
