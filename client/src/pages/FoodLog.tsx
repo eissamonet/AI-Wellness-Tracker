@@ -167,7 +167,7 @@ const FoodLog = () => {
                       <MealIcon className='size-5' />
                     </div>
                     <div>
-                      <h3>{mealType}</h3>
+                      <h3 className="font-semibold text-slate-800 dark:text-white capitalize">{mealType}</h3>
                       <p>{groupedEntries[mealTypeKey].length} items</p>
                     </div>
                   </div>
