@@ -167,6 +167,7 @@ const FoodLog = () => {
                       <p className="text-sm text-slate-500 dark:text-slate-400">{groupedEntries[mealTypeKey].length} items</p>
                     </div>
                   </div>
+                  <p className="font-semibold text-slate-700 dark:text-slate-200">{mealCalories} kcal</p>
                 </div>
               </Card>
             )
