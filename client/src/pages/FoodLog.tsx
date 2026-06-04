@@ -4,7 +4,7 @@ import type { FormData, FoodEntry } from "../types";
 import Card from "../components/ui/Card";
 import { mealColors, mealIcons, mealTypeOptions, quickActivitiesFoodLog } from "../assets/assets";
 import Button from "../components/ui/Button";
-import { Loader2Icon, PlusIcon, SparkleIcon, UtensilsIcon } from "lucide-react";
+import { Loader2Icon, PlusIcon, SparkleIcon, Trash2Icon, UtensilsIcon } from "lucide-react";
 import Input from "../components/ui/Input";
 import Select from "../components/ui/Select";
 import mockApi from "../assets/mockApi";
@@ -178,6 +178,9 @@ const FoodLog = () => {
                       </div>
                       <div className="flex items-center gap-3">
                         <span className="text-sm font-medium text-slate-600 dark:text-slate-300">{entry.calories} kcal</span>
+                        <button className="p-2 text-red-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors">
+                          <Trash2Icon className="w-4 h-4"/>
+                        </button>
                       </div>
                     </div>
                   ))}
