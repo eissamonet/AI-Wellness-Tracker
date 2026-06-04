@@ -171,7 +171,11 @@ const FoodLog = () => {
                 </div>
                 <div className="space-y-2">
                   {groupedEntries[mealTypeKey].map((entry) => (
-                    <div key={entry.id} className="flex items-center justify-between">
+                    <div key={entry.id} className="food-entry-item">
+                      <div className="flex-1">
+                        <p className="font-medium text-slate-700 dark:text-slate-200">{entry.name}</p>
+                        <p>{}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
