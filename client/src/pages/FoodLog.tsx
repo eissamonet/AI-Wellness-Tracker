@@ -174,7 +174,10 @@ const FoodLog = () => {
                     <div key={entry.id} className="food-entry-item">
                       <div className="flex-1">
                         <p className="font-medium text-slate-700 dark:text-slate-200">{entry.name}</p>
-                        <p>{}</p>
+                        <p className="text-sm text-slate-400">{}</p>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <span>{}</span>
                       </div>
                     </div>
                   ))}
