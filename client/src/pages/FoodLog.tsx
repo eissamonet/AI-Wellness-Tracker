@@ -64,6 +64,12 @@ const FoodLog = () => {
     setShowForm(true);
   }
 
+  const handleImageChange = async(e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if(!file) return;
+    // implement AI food recognition logic here
+  }
+
   useEffect(() => {
     (() => {
       loadEntries();
