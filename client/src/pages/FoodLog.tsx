@@ -169,6 +169,12 @@ const FoodLog = () => {
                   </div>
                   <p className="font-semibold text-slate-700 dark:text-slate-200">{mealCalories} kcal</p>
                 </div>
+                <div className="space-y-2">
+                  {groupedEntries[mealTypeKey].map((entry) => (
+                    <div key={entry.id} className="flex items-center justify-between">
+                    </div>
+                  ))}
+                </div>
               </Card>
             )
             })}
