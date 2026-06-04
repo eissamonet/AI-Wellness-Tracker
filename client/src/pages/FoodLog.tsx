@@ -120,7 +120,7 @@ const FoodLog = () => {
               <SparkleIcon className="size-5" />
               AI Food Snap
             </Button>
-            <input type="file" accept="image/*" hidden ref={inputRef}/>
+            <input onChange={handleImageChange} type="file" accept="image/*" hidden ref={inputRef}/>
             {loading && (
               <div className="fixed inset-0 bg-slate-100/50 dark:bg-slate-900/50 backdrop-blur flex items-center justify-center z-100">
                 <Loader2Icon className="size-8 text-emerald-600 dark:text-emerald-400 animate-spin" />
