@@ -8,6 +8,7 @@ import { Loader2Icon, PlusIcon, SparkleIcon, Trash2Icon, UtensilsIcon } from "lu
 import Input from "../components/ui/Input";
 import Select from "../components/ui/Select";
 import mockApi from "../assets/mockApi";
+import { toast } from "react-hot-toast/headless";
 
 const FoodLog = () => {
   const {allFoodLogs, setAllFoodLogs} = useAppContext();
@@ -36,6 +37,17 @@ const FoodLog = () => {
     setFormData({name: '', calories: 0, mealType: ''});
     setShowForm(false);
   }
+
+  const handleDelete = async(documentId: string) => {
+    try {
+      const confirm = window.confirm("Are you sure you want to delete this entry?");
+      if(!confirm) return;
+      await mockApi.foodLogs.delete(documentId);
+      setAllFoodLogs(prev => prev.filter((entry) => entry.documentId !== documentId));
+    } catch (error:any) {
+      console.log(error);
+      toast.error(error?.message || 'Failed to delete food');
+    }
 
   const totalCalories = entries.reduce((total, entry) => total + entry.calories, 0);
 
@@ -178,7 +190,8 @@ const FoodLog = () => {
                       </div>
                       <div className="flex items-center gap-3">
                         <span className="text-sm font-medium text-slate-600 dark:text-slate-300">{entry.calories} kcal</span>
-                        <button className="p-2 text-red-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors">
+                        <button
+                        onClick={()=> handleDelete(entry?.documentId || )} className="p-2 text-red-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors">
                           <Trash2Icon className="w-4 h-4"/>
                         </button>
                       </div>
