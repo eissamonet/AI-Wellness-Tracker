@@ -48,7 +48,9 @@ const ActivityLog = () => {
         {/* quick add section */}
         {!showForm && (
           <div className="space-y-4">
-            <Card />
+            <Card>
+              <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-3">Quick Add</h3>
+            </Card>
           </div>
         )}
 
