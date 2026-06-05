@@ -24,8 +24,11 @@ const ActivityLog = () => {
     })();
     },[allActivityLogs])
 
+    const totalMinutes: number = activities.reduce((sum, activity) => sum + activity.duration, 0);
+
+
   return (
-    <div>
+    <div className="page-container">
        ActivityLog
     </div>
   )
