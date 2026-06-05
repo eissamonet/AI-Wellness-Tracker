@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext"
 import type { ActivityEntry } from "../types";
+import Card from "../components/ui/Card";
 
 const ActivityLog = () => {
 
@@ -41,6 +42,20 @@ const ActivityLog = () => {
             <p className="text-xl font-bold text-blue-600 dark:text-blue-400">{totalMinutes} mins</p>
           </div>
         </div>
+       </div>
+
+       <div className="page-content-grid">
+        {/* quick add section */}
+        {!showForm && (
+          <div className="space-y-4">
+            <Card />
+          </div>
+        )}
+
+        {/* add form */}
+
+
+        {/* activities list */}
        </div>
     </div>
   )
