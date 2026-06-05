@@ -6,7 +6,7 @@ const ActivityLog = () => {
 
   const {allActivityLogs, setAllActivityLogs} = useAppContext();
 
-  const [activity, setActivity] = useState<ActivityEntry[]>([])
+  const [activities, setActivities] = useState<ActivityEntry[]>([])
   const [showForm, setShowForm] = useState(false)
   const [formData, setFormData] = useState({name: '', duration: 0, caloriesBurned: 0})
   const [error, setError] = useState('')
@@ -15,7 +15,7 @@ const ActivityLog = () => {
 
   const loadActivities = () => {
       const todaysActivities = allActivityLogs.filter((a: ActivityEntry) => a.createdAt?.split('T')[0] === today);
-      setActivity(todaysActivities);
+      setActivities(todaysActivities);
     }
 
   return (
