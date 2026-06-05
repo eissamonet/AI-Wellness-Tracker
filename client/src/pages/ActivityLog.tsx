@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext"
 import type { ActivityEntry } from "../types";
 
@@ -17,6 +17,12 @@ const ActivityLog = () => {
       const todaysActivities = allActivityLogs.filter((a: ActivityEntry) => a.createdAt?.split('T')[0] === today);
       setActivities(todaysActivities);
     }
+
+    useEffect(() => {
+      (() => {
+      loadActivities()
+    })();
+    },[allActivityLogs])
 
   return (
     <div>
