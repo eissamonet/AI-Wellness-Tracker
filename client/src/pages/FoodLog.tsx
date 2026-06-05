@@ -89,7 +89,7 @@ const FoodLog = () => {
           </div>
           <div className="text-right">
             <p className="text-sm text-slate-500 dark:text-slate-400">Today's Total</p>
-            <p className="text-xl font-bold text-emeral-600 dark:text-emerald-400">{totalCalories} kcal</p>
+            <p className="text-xl font-bold text-emerald-600 dark:text-emerald-400">{totalCalories} kcal</p>
           </div>
         </div>
        </div>
