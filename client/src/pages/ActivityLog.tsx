@@ -6,6 +6,8 @@ import { quickActivities } from "../assets/assets";
 import { PlusIcon } from "lucide-react";
 import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
+import toast from "react-hot-toast";
+import mockApi from "../assets/mockApi";
 
 const ActivityLog = () => {
 
@@ -28,6 +30,24 @@ const ActivityLog = () => {
       loadActivities()
     })();
     },[allActivityLogs])
+
+    const handleSubmit = async (e: React.FormEvent) => {
+      e.preventDefault();
+      if(!formData.name.trim() || formData.duration <= 0) {
+        return toast.error('Please enter valid activity name and duration');
+      }
+      try {
+        // mock API call
+        const {data} = await mockApi.activityLogs.create({data: formData});
+        setAllActivityLogs(prev => [...prev, data]);
+        setFormData({name: '', duration: 0, caloriesBurned: 0});
+        setShowForm(false);
+      } catch (error: any) {
+        console.log(error);
+        toast.error(error?.message || 'Failed to add activity');
+      }
+    }
+
 
     const handleQuickAdd = (activity: {name: string, rate: number})=> {
       setFormData({
@@ -94,7 +114,7 @@ const ActivityLog = () => {
         {showForm && (
           <Card className="border-2 border-blue-200 dark:border-blue-800">
              <h3 className="font-semibold text-slate-800 dark:text-white mb-4">New Activity</h3>
-             <form className="space-y-4" onClick={handleSubmit}>
+             <form className="space-y-4" onSubmit={handleSubmit}>
               <Input label="Activity Name" placeholder="ex, Morning Run" required value={formData.name}
               onChange={(v) => setFormData({...formData, name: v.toString()})}/>
 
