@@ -105,6 +105,7 @@ const ActivityLog = () => {
                 <Input label="Calories Burned" type="number" className="flex-1" placeholder="ex, 200" min={1} max={2000} required value={formData.calories}
                 onChange={(v) => setFormData({...formData, calories: Number(v)})}/>
               </div>
+              {error && <p className="text-red-500 text-sm">{error}</p>}
              </form>
           </Card>
 
