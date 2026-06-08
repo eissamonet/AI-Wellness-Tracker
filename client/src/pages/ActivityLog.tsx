@@ -87,8 +87,8 @@ const ActivityLog = () => {
               onChange={(v) => setFormData({...formData, name: v.toString()})}/>
 
               <div className="flex gap-4">
-                <Input label="Activity Name" placeholder="ex, Morning Run" required value={formData.name}
-                onChange={(v) => setFormData({...formData, name: v.toString()})}/>
+                <Input label="Duration (minutes)" type="number" className="flex-1" placeholder="ex, 30" min={1} max={300} required value={formData.duration}
+                onChange={handleDurationChange}/>
               </div>
              </form>
           </Card>
