@@ -5,6 +5,7 @@ import Card from "../components/ui/Card";
 import { quickActivities } from "../assets/assets";
 import { PlusIcon } from "lucide-react";
 import Input from "../components/ui/Input";
+import Button from "../components/ui/Button";
 
 const ActivityLog = () => {
 
@@ -106,6 +107,18 @@ const ActivityLog = () => {
                 onChange={(v) => setFormData({...formData, calories: Number(v)})}/>
               </div>
               {error && <p className="text-red-500 text-sm">{error}</p>}
+
+              <div className="flex gap-3 pt-2">
+                <Button type="button" variant="secondary" className="flex-1" onClick={()=> {
+                  setShowForm(false);
+                  setError('');
+                 }}>
+                  Cancel
+                </Button>
+                <Button type="submit" className="flex-1">
+                  Add Activity
+                </Button>
+              </div>
              </form>
           </Card>
 
