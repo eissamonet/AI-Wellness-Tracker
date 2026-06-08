@@ -4,6 +4,7 @@ import type { ActivityEntry } from "../types";
 import Card from "../components/ui/Card";
 import { quickActivities } from "../assets/assets";
 import { PlusIcon } from "lucide-react";
+import Input from "../components/ui/Input";
 
 const ActivityLog = () => {
 
@@ -81,6 +82,10 @@ const ActivityLog = () => {
         {showForm && (
           <Card className="border-2 border-blue-200 dark:border-blue-800">
              <h3 className="font-semibold text-slate-800 dark:text-white mb-4">New Activity</h3>
+             <form className="space-y-4" onClick={handleSubmit}>
+              <Input label="Activity Name" placeholder="ex, Morning Run" required />
+
+             </form>
           </Card>
 
         )}
