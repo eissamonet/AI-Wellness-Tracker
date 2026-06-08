@@ -160,6 +160,10 @@ const ActivityLog = () => {
               <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center">
                 <ActivityIcon className="size-5 text-blue-600" />
               </div>
+              <div>
+                <h3 className="font-semibold text-slate-800 dark:text-white">Today's Activities</h3>
+                <p>{activities.length} Activities Logged</p>
+              </div>
 
             </div>
           </Card>
