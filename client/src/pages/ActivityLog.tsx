@@ -3,6 +3,7 @@ import { useAppContext } from "../context/AppContext"
 import type { ActivityEntry } from "../types";
 import Card from "../components/ui/Card";
 import { quickActivities } from "../assets/assets";
+import { act } from "react-dom/test-utils";
 
 const ActivityLog = () => {
 
@@ -25,6 +26,14 @@ const ActivityLog = () => {
       loadActivities()
     })();
     },[allActivityLogs])
+
+    const handleQuickAdd = (activity: {name: string, rate: number})=> {
+      setFormData({
+        name: activity.name,
+        duration: 30,
+        calories: 30 * activity.rate
+      })
+    }
 
     const totalMinutes: number = activities.reduce((sum, activity) => sum + activity.duration, 0);
 
