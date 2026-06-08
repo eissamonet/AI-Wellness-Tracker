@@ -152,6 +152,7 @@ const ActivityLog = () => {
               <DumbbellIcon className="w-8 h-8 text-slate-400 dark:text-slate-500" />
             </div>
             <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">No Activity Logged Today</h3>
+            <p className="text-slate-500 dark:text-slate-400 text-sm">Start moving and Track Your Progress</p>
           </Card>
         ) : (
           <Card>
