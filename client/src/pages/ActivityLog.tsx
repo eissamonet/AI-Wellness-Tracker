@@ -83,10 +83,10 @@ const ActivityLog = () => {
                 ))}
               </div>
             </Card>
-            <button className="w-full" onClick={()=> setShowForm(true)}>
+            <Button className="w-full" onClick={()=> setShowForm(true)}>
               <PlusIcon className='size-5' />
               Add Custom Activity
-            </button>
+            </Button>
           </div>
         )}
 
