@@ -78,7 +78,12 @@ const ActivityLog = () => {
         )}
 
         {/* add form */}
+        {showForm && (
+          <Card className="border-2 border-blue-200 dark:border-blue-800">
 
+          </Card>
+
+        )}
 
         {/* activities list */}
        </div>
