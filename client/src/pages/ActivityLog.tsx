@@ -3,7 +3,7 @@ import { useAppContext } from "../context/AppContext"
 import type { ActivityEntry } from "../types";
 import Card from "../components/ui/Card";
 import { quickActivities } from "../assets/assets";
-import { act } from "react-dom/test-utils";
+import { PlusIcon } from "lucide-react";
 
 const ActivityLog = () => {
 
@@ -70,6 +70,10 @@ const ActivityLog = () => {
                 ))}
               </div>
             </Card>
+            <button className="w-full">
+              <PlusIcon className='size-5' />
+              Add Custom Activity
+            </button>
           </div>
         )}
 
