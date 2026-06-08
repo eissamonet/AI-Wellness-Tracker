@@ -146,6 +146,15 @@ const ActivityLog = () => {
         )}
 
         {/* activities list */}
+        {activities.length === 0 ? (
+          <Card>
+
+          </Card>
+        ) : (
+          <Card>
+
+          </Card>
+          )}
        </div>
     </div>
   )
