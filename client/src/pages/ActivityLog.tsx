@@ -37,6 +37,17 @@ const ActivityLog = () => {
       setShowForm(true);
     }
 
+    const handleDurationChange = (val: string | number) => {
+      const duration = Number(val);
+      const activity = quickActivities.find(a => a.name === formData.name);
+
+      let calories = formData.calories;
+      if(activity) {
+        calories = duration * activity.rate;
+      }
+      setFormData({...formData, duration, calories})
+    }
+
     const totalMinutes: number = activities.reduce((sum, activity) => sum + activity.duration, 0);
 
 
