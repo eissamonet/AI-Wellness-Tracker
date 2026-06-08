@@ -151,7 +151,7 @@ const ActivityLog = () => {
             <div className="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center jsutify-center mx-auto mb-4">
               <DumbbellIcon className="w-8 h-8 text-slate-400 dark:text-slate-500" />
             </div>
-            <h3>No Activity Logged Today</h3>
+            <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-2">No Activity Logged Today</h3>
           </Card>
         ) : (
           <Card>
