@@ -80,7 +80,7 @@ const ActivityLog = () => {
         {/* add form */}
         {showForm && (
           <Card className="border-2 border-blue-200 dark:border-blue-800">
-
+             <h3 className="font-semibold text-slate-800 dark:text-white mb-4">New Activity</h3>
           </Card>
 
         )}
