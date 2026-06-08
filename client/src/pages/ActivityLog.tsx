@@ -3,7 +3,7 @@ import { useAppContext } from "../context/AppContext"
 import type { ActivityEntry } from "../types";
 import Card from "../components/ui/Card";
 import { quickActivities } from "../assets/assets";
-import { DumbbellIcon, PlusIcon } from "lucide-react";
+import { ActivityIcon, DumbbellIcon, PlusIcon } from "lucide-react";
 import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
 import toast from "react-hot-toast";
@@ -156,7 +156,12 @@ const ActivityLog = () => {
           </Card>
         ) : (
           <Card>
+            <div className="flex items-center gap-3 mb-4">
+              <div>
+                <ActivityIcon className="size-5 text-blue-600" />
+              </div>
 
+            </div>
           </Card>
           )}
        </div>
