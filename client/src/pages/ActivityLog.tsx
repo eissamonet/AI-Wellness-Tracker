@@ -74,7 +74,7 @@ const ActivityLog = () => {
           <div className="space-y-4">
             <Card>
               <h3 className="font-semibold text-slate-700 dark:text-slate-200 mb-3">Quick Add</h3>
-              <div>
+              <div className="flex flex-wrap gap-2">
                 {quickActivities.map((activity)=> (
                   <button onClick={() => handleQuickAdd(activity)} key={activity.name} className="px-4 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-xl text-sm font-medium text-slate-700
                   dark:text-slate-200 transition-colors">
@@ -112,6 +112,7 @@ const ActivityLog = () => {
                 <Button type="button" variant="secondary" className="flex-1" onClick={()=> {
                   setShowForm(false);
                   setError('');
+                  setFormData({name: '', duration: 0, calories: 0})
                  }}>
                   Cancel
                 </Button>
