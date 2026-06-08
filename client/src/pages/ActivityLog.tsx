@@ -157,7 +157,7 @@ const ActivityLog = () => {
         ) : (
           <Card>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-cente">
+              <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center">
                 <ActivityIcon className="size-5 text-blue-600" />
               </div>
 
