@@ -3,7 +3,7 @@ import { useAppContext } from "../context/AppContext"
 import type { ActivityEntry } from "../types";
 import Card from "../components/ui/Card";
 import { quickActivities } from "../assets/assets";
-import { PlusIcon } from "lucide-react";
+import { DumbbellIcon, PlusIcon } from "lucide-react";
 import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
 import toast from "react-hot-toast";
@@ -149,9 +149,9 @@ const ActivityLog = () => {
         {activities.length === 0 ? (
           <Card className="text-center py-12">
             <div className="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center jsutify-center mx-auto mb-4">
-
+              <DumbbellIcon className="w-8 h-8 text-slate-400 dark:text-slate-500" />
             </div>
-
+            <h3>No Activity Logged Today</h3>
           </Card>
         ) : (
           <Card>
