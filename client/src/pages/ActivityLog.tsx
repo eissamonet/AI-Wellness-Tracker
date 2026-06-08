@@ -147,7 +147,10 @@ const ActivityLog = () => {
 
         {/* activities list */}
         {activities.length === 0 ? (
-          <Card>
+          <Card className="text-center py-12">
+            <div className="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center jsutify-center mx-auto mb-4">
+
+            </div>
 
           </Card>
         ) : (
