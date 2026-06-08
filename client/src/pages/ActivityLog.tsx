@@ -31,8 +31,9 @@ const ActivityLog = () => {
       setFormData({
         name: activity.name,
         duration: 30,
-        calories: 30 * activity.rate
+        calories:30 * activity.rate
       })
+      setShowForm(true);
     }
 
     const totalMinutes: number = activities.reduce((sum, activity) => sum + activity.duration, 0);
