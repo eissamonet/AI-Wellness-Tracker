@@ -83,8 +83,13 @@ const ActivityLog = () => {
           <Card className="border-2 border-blue-200 dark:border-blue-800">
              <h3 className="font-semibold text-slate-800 dark:text-white mb-4">New Activity</h3>
              <form className="space-y-4" onClick={handleSubmit}>
-              <Input label="Activity Name" placeholder="ex, Morning Run" required value={formData.name} onChange={(v) => setFormData({...formData, name: v.toString()})}/>
+              <Input label="Activity Name" placeholder="ex, Morning Run" required value={formData.name}
+              onChange={(v) => setFormData({...formData, name: v.toString()})}/>
 
+              <div className="flex gap-4">
+                <Input label="Activity Name" placeholder="ex, Morning Run" required value={formData.name}
+                onChange={(v) => setFormData({...formData, name: v.toString()})}/>
+              </div>
              </form>
           </Card>
 
