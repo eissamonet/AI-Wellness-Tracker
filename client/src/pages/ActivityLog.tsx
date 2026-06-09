@@ -174,8 +174,8 @@ const ActivityLog = () => {
                       <TimerIcon className="size-5 text-blue-500 dark:text-blue-400" />
                     </div>
                   </div>
-                    <p>{activity.name}</p>
-                    <p>{new Date(activity?.createdAt || '').toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
+                    <p className="font-medium text-slate-700 dark:text-slate-200">{activity.name}</p>
+                    <p className="text-sm text-slate-400">{new Date(activity?.createdAt || '').toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
                   <div></div>
                 </div>
               ))}
