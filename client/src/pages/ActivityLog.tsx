@@ -3,7 +3,7 @@ import { useAppContext } from "../context/AppContext"
 import type { ActivityEntry } from "../types";
 import Card from "../components/ui/Card";
 import { quickActivities } from "../assets/assets";
-import { ActivityIcon, DumbbellIcon, PlusIcon } from "lucide-react";
+import { ActivityIcon, DumbbellIcon, PlusIcon, TimerIcon } from "lucide-react";
 import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
 import toast from "react-hot-toast";
@@ -169,7 +169,13 @@ const ActivityLog = () => {
             <div className="space-y-2">
               {activities.map((activity) => (
                 <div key={activity.id} className="activity-entry-item">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center">
+                      <TimerIcon className="size-5 text-blue-500 dark:text-blue-400" />
+                    </div>
+                  </div>
 
+                  <div></div>
                 </div>
               ))}
             </div>
