@@ -164,8 +164,15 @@ const ActivityLog = () => {
                 <h3 className="font-semibold text-slate-800 dark:text-white">Today's Activities</h3>
                 <p className="text-sm text-slate-500 dark:text-slate-400">{activities.length} Activities Logged</p>
               </div>
+            </div>
+
+            <div>
 
             </div>
+
+            {/* total summary */}
+            <div></div>
+
           </Card>
           )}
        </div>
