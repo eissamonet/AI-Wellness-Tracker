@@ -166,8 +166,12 @@ const ActivityLog = () => {
               </div>
             </div>
 
-            <div>
+            <div className="space-y-2">
+              {activities.map((activity) => (
+                <div key={activity.id}>
 
+                </div>
+              ))}
             </div>
 
             {/* total summary */}
