@@ -3,7 +3,7 @@ import { useAppContext } from "../context/AppContext"
 import type { ActivityEntry } from "../types";
 import Card from "../components/ui/Card";
 import { quickActivities } from "../assets/assets";
-import { ActivityIcon, DumbbellIcon, PlusIcon, TimerIcon } from "lucide-react";
+import { ActivityIcon, DumbbellIcon, PlusIcon, TimerIcon, Trash2Icon } from "lucide-react";
 import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
 import toast from "react-hot-toast";
@@ -173,9 +173,11 @@ const ActivityLog = () => {
                     <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center">
                       <TimerIcon className="size-5 text-blue-500 dark:text-blue-400" />
                     </div>
+                    <div>
+                      <p className="font-medium text-slate-700 dark:text-slate-200">{activity.name}</p>
+                      <p className="text-sm text-slate-400">{new Date(activity?.createdAt || '').toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
+                   </div>
                   </div>
-                    <p className="font-medium text-slate-700 dark:text-slate-200">{activity.name}</p>
-                    <p className="text-sm text-slate-400">{new Date(activity?.createdAt || '').toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
                   <div></div>
                 </div>
               ))}
@@ -185,7 +187,7 @@ const ActivityLog = () => {
             <div></div>
 
           </Card>
-          )}
+        )}
        </div>
     </div>
   )
