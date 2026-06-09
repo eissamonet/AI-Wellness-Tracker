@@ -178,7 +178,9 @@ const ActivityLog = () => {
                       <p className="text-sm text-slate-400">{new Date(activity?.createdAt || '').toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}</p>
                    </div>
                   </div>
-                  <div></div>
+                  <div className="flex items-center gap-3">
+
+                  </div>
                 </div>
               ))}
             </div>
