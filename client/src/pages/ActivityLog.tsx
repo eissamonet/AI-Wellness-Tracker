@@ -179,8 +179,9 @@ const ActivityLog = () => {
                    </div>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div>
-
+                    <div className="text-right">
+                      <p>{activity.duration} min</p>
+                      <p>{activity.calories} cal</p>
                     </div>
                     <button className="p-2 text-red-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors">
                       <Trash2Icon className="w-4 h-4" />
