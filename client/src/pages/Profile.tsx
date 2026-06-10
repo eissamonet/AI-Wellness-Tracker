@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext"
 import { useTheme } from "../context/ThemeContext";
 import type { ProfileFormData } from "../types";
+import Card from "../components/ui/Card";
 
 const Profile = () => {
   const {user, logout, fetchUser, allFoodLogs, allActivityLogs} = useAppContext()
@@ -41,8 +42,13 @@ const Profile = () => {
 
       <div className="profile-content">
         {/* left col */}
+          <Card>
 
+          </Card>
         {/* right col */}
+          <div>
+
+          </div>
       </div>
     </div>
   )
