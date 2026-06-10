@@ -198,7 +198,8 @@ const ActivityLog = () => {
 
             {/* total summary */}
             <div>
-              <span>Totoal Active Time</span>
+              <span className="text-slate-500 dark:text-slate-400">Total Active Time</span>
+              <span className="text-lg font-bold text-blue-600 dark:text-blue-400">{totalMinutes} minutes</span>
             </div>
 
           </Card>
