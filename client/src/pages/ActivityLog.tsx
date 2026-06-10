@@ -69,6 +69,10 @@ const ActivityLog = () => {
       setFormData({...formData, duration, calories})
     }
 
+    const handleDelete = async(documentId: string) => {
+
+    }
+
     const totalMinutes: number = activities.reduce((sum, activity) => sum + activity.duration, 0);
 
 
@@ -183,7 +187,8 @@ const ActivityLog = () => {
                       <p className="font-semibold text-slate-700 dark:text-slate-200">{activity.duration} min</p>
                       <p className="text-xs text-slate-400">{activity.calories} cal</p>
                     </div>
-                    <button className="p-2 text-red-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors">
+                    <button onClick={()=>handleDelete(activity.documentId)}
+                    className="p-2 text-red-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors">
                       <Trash2Icon className="w-4 h-4" />
                     </button>
                   </div>
@@ -192,7 +197,9 @@ const ActivityLog = () => {
             </div>
 
             {/* total summary */}
-            <div></div>
+            <div>
+              <span>Totoal Active Time</span>
+            </div>
 
           </Card>
         )}
