@@ -36,7 +36,7 @@ const Profile = () => {
       {/* header */}
       <div className="page-header">
         <h1 className="text-2xl font-bold text-slate-800 dark:text-white">Profile</h1>
-        <p>Manage Your Settings</p>
+        <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">Manage Your Settings</p>
       </div>
     </div>
   )
