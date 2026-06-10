@@ -3,6 +3,7 @@ import { useAppContext } from "../context/AppContext"
 import { useTheme } from "../context/ThemeContext";
 import type { ProfileFormData } from "../types";
 import Card from "../components/ui/Card";
+import { User } from "lucide-react";
 
 const Profile = () => {
   const {user, logout, fetchUser, allFoodLogs, allActivityLogs} = useAppContext()
@@ -43,7 +44,16 @@ const Profile = () => {
       <div className="profile-content">
         {/* left col */}
           <Card>
-
+            {/* card title  */}
+            <div className="flex items-center gap-4 mb-6">
+              <div className="siz-12 rounded-xl bg-linear-to-br from-emerald-400 to-emerald-600 flex items-center justify-center">
+                <User className="size-6 text-white"/>
+              </div>
+              <div>
+                <h2>Your Profile</h2>
+                <p>Member Since {new Date(user?.createdAt || "").toLocaleDateString()}</p>
+              </div>
+            </div>
           </Card>
         {/* right col */}
           <div>
