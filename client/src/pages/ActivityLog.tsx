@@ -197,7 +197,7 @@ const ActivityLog = () => {
             </div>
 
             {/* total summary */}
-            <div className="mt-4 pt-4 border-t border-slate-100">
+            <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-between items center">
               <span className="text-slate-500 dark:text-slate-400">Total Active Time</span>
               <span className="text-lg font-bold text-blue-600 dark:text-blue-400">{totalMinutes} minutes</span>
             </div>
