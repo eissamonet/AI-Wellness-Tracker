@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext"
 import { useTheme } from "../context/ThemeContext";
 import type { ProfileFormData } from "../types";
@@ -22,6 +22,12 @@ const Profile = () => {
        })
      }
   }
+
+  useEffect(() => {
+    (() => {
+      fetchUserData()
+    })()
+  }, [user])
 
 
   return (
