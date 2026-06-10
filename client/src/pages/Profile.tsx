@@ -32,8 +32,12 @@ const Profile = () => {
   if(!user || !formData) return null
 
   return (
-    <div>
-        Profile
+    <div className="page-container">
+      {/* header */}
+      <div className="page-header">
+        <h1 className="text-2xl font-bold text-slate-800 dark:text-white">Profile</h1>
+        <p>Manage Your Settings</p>
+      </div>
     </div>
   )
 }
