@@ -29,6 +29,7 @@ const Profile = () => {
     })()
   }, [user])
 
+  if(!user || !formData) return null
 
   return (
     <div>
