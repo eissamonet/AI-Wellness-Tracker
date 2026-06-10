@@ -38,6 +38,12 @@ const Profile = () => {
         <h1 className="text-2xl font-bold text-slate-800 dark:text-white">Profile</h1>
         <p className="text-slate-500 dark:text-slate-400 text-sm mt-1">Manage Your Settings</p>
       </div>
+
+      <div className="profile-content">
+        {/* left col */}
+
+        {/* right col */}
+      </div>
     </div>
   )
 }
