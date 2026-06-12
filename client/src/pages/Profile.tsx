@@ -69,7 +69,7 @@ const Profile = () => {
                     <p className="text-sm text-slate-500 dark:text-slate-400">
                       Age
                     </p>
-                    <p>{user.age} years</p>
+                    <p className="font-semibold text-slate-800 dark:text-white">{user.age} years</p>
                   </div>
                 </div>
               </div>
