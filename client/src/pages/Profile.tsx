@@ -3,7 +3,7 @@ import { useAppContext } from "../context/AppContext"
 import { useTheme } from "../context/ThemeContext";
 import type { ProfileFormData } from "../types";
 import Card from "../components/ui/Card";
-import { Calendar, User } from "lucide-react";
+import { Calendar, Scale, User } from "lucide-react";
 import Button from "../components/ui/Button";
 
 const Profile = () => {
@@ -77,8 +77,8 @@ const Profile = () => {
 
                 {/* weight */}
                 <div className="flex items-center gap-4 p-3 bg-slate-50 dark:bg-slate-800 rounded-lg transition-colors duration-200">
-                  <div className="size-10 rounded-lg bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center">
-                    <Calendar className="size-4.5 text-blue-600 dark:text-blue-400" />
+                  <div className="size-10 rounded-lg bg-purple-100 dark:purple-blue-900/20 flex items-center justify-center">
+                    <Scale className="size-4.5 text-purple-600 dark:text-purple-400" />
                   </div>
                   <div>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
