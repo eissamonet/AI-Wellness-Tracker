@@ -61,6 +61,8 @@ const Profile = () => {
             ): (
               <>
               <div className="space-y-4">
+
+                {/* age */}
                 <div className="flex items-center gap-4 p-3 bg-slate-50 dark:bg-slate-800 rounded-lg transition-colors duration-200">
                   <div className="size-10 rounded-lg bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center">
                     <Calendar className="size-4.5 text-blue-600 dark:text-blue-400" />
@@ -70,6 +72,19 @@ const Profile = () => {
                       Age
                     </p>
                     <p className="font-semibold text-slate-800 dark:text-white">{user.age} years</p>
+                  </div>
+                </div>
+
+                {/* weight */}
+                <div className="flex items-center gap-4 p-3 bg-slate-50 dark:bg-slate-800 rounded-lg transition-colors duration-200">
+                  <div className="size-10 rounded-lg bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center">
+                    <Calendar className="size-4.5 text-blue-600 dark:text-blue-400" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                      Weight
+                    </p>
+                    <p className="font-semibold text-slate-800 dark:text-white">{user.weight} kg</p>
                   </div>
                 </div>
               </div>
