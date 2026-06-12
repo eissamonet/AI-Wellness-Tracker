@@ -62,8 +62,8 @@ const Profile = () => {
               <>
               <div className="space-y-4">
                 <div className="flex items-center gap-4 p-3 bg-slate-50 dark:bg-slate-800 rounded-lg transition-colors duration-200">
-                  <div>
-                    <Calendar />
+                  <div className="size-10 rounded-lg bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center">
+                    <Calendar className="" />
                   </div>
                 </div>
               </div>
