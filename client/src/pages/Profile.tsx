@@ -3,7 +3,7 @@ import { useAppContext } from "../context/AppContext"
 import { useTheme } from "../context/ThemeContext";
 import type { ProfileFormData } from "../types";
 import Card from "../components/ui/Card";
-import { User } from "lucide-react";
+import { Calendar, User } from "lucide-react";
 import Button from "../components/ui/Button";
 
 const Profile = () => {
@@ -60,7 +60,14 @@ const Profile = () => {
               <div></div>
             ): (
               <>
-              <div></div>
+              <div className="space-y-4">
+                <div className="flex items-center gap-4 p-3 bg-slate-50 dark:bg-slate-800 rounded-lg transition-colors duration-200">
+                  <div>
+                    <Calendar />
+                  </div>
+                </div>
+              </div>
+
               <Button variant="secondary" onClick={() => setIsEditing(true)} className="mt-4 w-full">Edit Profile</Button>
               </>
             )}
