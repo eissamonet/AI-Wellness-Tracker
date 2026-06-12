@@ -65,6 +65,12 @@ const Profile = () => {
                   <div className="size-10 rounded-lg bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center">
                     <Calendar className="size-4.5 text-blue-600 dark:text-blue-400" />
                   </div>
+                  <div>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                      Age
+                    </p>
+                    <p>{user.age} years</p>
+                  </div>
                 </div>
               </div>
 
