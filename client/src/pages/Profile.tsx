@@ -54,6 +54,14 @@ const Profile = () => {
                 <p className="text-slate-500 dark:text-slate-400">Member Since {new Date(user?.createdAt || "").toLocaleDateString()}</p>
               </div>
             </div>
+
+            {isEditing ? (
+              <div></div>
+            ): (
+              <>
+              </>
+            )}
+
           </Card>
         {/* right col */}
           <div>
