@@ -4,6 +4,7 @@ import { useTheme } from "../context/ThemeContext";
 import type { ProfileFormData } from "../types";
 import Card from "../components/ui/Card";
 import { User } from "lucide-react";
+import Button from "../components/ui/Button";
 
 const Profile = () => {
   const {user, logout, fetchUser, allFoodLogs, allActivityLogs} = useAppContext()
@@ -60,7 +61,7 @@ const Profile = () => {
             ): (
               <>
               <div></div>
-              <button>Edit Profile</button>
+              <Button>Edit Profile</Button>
               </>
             )}
 
