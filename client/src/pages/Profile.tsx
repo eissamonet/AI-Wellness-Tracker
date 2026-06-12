@@ -61,7 +61,7 @@ const Profile = () => {
             ): (
               <>
               <div></div>
-              <Button>Edit Profile</Button>
+              <Button variant="secondary" onClick={() => setIsEditing(true)} className="mt-4 w-full">Edit Profile</Button>
               </>
             )}
 
