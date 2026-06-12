@@ -50,7 +50,7 @@ const Profile = () => {
                 <User className="size-6 text-white"/>
               </div>
               <div>
-                <h2>Your Profile</h2>
+                <h2 className="text-lg font-semibold text-slate-800 dark:text-white">Your Profile</h2>
                 <p>Member Since {new Date(user?.createdAt || "").toLocaleDateString()}</p>
               </div>
             </div>
