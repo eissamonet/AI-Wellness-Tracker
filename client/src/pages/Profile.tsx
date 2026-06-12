@@ -51,7 +51,7 @@ const Profile = () => {
               </div>
               <div>
                 <h2 className="text-lg font-semibold text-slate-800 dark:text-white">Your Profile</h2>
-                <p>Member Since {new Date(user?.createdAt || "").toLocaleDateString()}</p>
+                <p className="text-slate-500 dark:text-slate-400">Member Since {new Date(user?.createdAt || "").toLocaleDateString()}</p>
               </div>
             </div>
           </Card>
