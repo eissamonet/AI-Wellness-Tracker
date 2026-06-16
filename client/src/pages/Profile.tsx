@@ -87,7 +87,7 @@ const Profile = () => {
 
                 {/* weight */}
                 <div className="flex items-center gap-4 p-3 bg-slate-50 dark:bg-slate-800 rounded-lg transition-colors duration-200">
-                  <div className="size-10 rounded-lg bg-purple-100 dark:purple-blue-900/20 flex items-center justify-center">
+                  <div className="size-10 rounded-lg bg-purple-100 dark:bg-purple-900/20 flex items-center justify-center">
                     <Scale className="size-4.5 text-purple-600 dark:text-purple-400" />
                   </div>
                   <div>
@@ -103,12 +103,12 @@ const Profile = () => {
                 {/* height */}
                 {user.height !== 0 && (
                   <div className="flex items-center gap-4 p-3 bg-slate-50 dark:bg-slate-800 rounded-lg transition-colors duration-200">
-                    <div className="size-10 rounded-lg bg-purple-100 dark:purple-blue-900/20 flex items-center justify-center">
-                      <Scale className="size-4.5 text-purple-600 dark:text-purple-400" />
+                    <div className="size-10 rounded-lg bg-green-100 dark:bg-green-900/20 flex items-center justify-center">
+                      <User className="size-4.5 text-green-600 dark:text-green-400" />
                     </div>
                     <div>
                       <p className="text-sm text-slate-500 dark:text-slate-400">
-                        Weight
+                        Height
                       </p>
                       <p className="font-semibold text-slate-800 dark:text-white">
                         {user.weight} kg
