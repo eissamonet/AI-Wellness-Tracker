@@ -84,8 +84,11 @@ const Profile = () => {
               options={goalOptions} />
 
               <div className="flex gap-3 pt-2">
-                <Button>
-
+                <Button variant="secondary" className="flex-1">
+                  Cancel
+                </Button>
+                <Button className="flex-1">
+                  Save Changes
                 </Button>
               </div>
             </div>
