@@ -73,10 +73,10 @@ const Profile = () => {
               <Input label="Age" type="number" value={formData.age} onChange={(v) => setFormData({...formData, age: Number(v)})}
               min={13} max={120}/>
 
-              <Input label="Weight" type="number" value={formData.weight} onChange={(v) => setFormData({...formData, weight: Number(v)})}
-              min={30} max={300}/>
+              <Input label="Weight (kg)" type="number" value={formData.weight} onChange={(v) => setFormData({...formData, weight: Number(v)})}
+              min={20} max={300}/>
 
-              <Input label="Height" type="number" value={formData.height} onChange={(v) => setFormData({...formData, height: Number(v)})}
+              <Input label="Height (cm)" type="number" value={formData.height} onChange={(v) => setFormData({...formData, height: Number(v)})}
               min={100} max={250}/>
             </div>
           ) : (
