@@ -5,7 +5,7 @@ import type { ProfileFormData } from "../types";
 import Card from "../components/ui/Card";
 import { Calendar, Scale, Target, User } from "lucide-react";
 import Button from "../components/ui/Button";
-import { goalLabels } from "../assets/assets";
+import { goalLabels, goalOptions } from "../assets/assets";
 import Input from "../components/ui/Input";
 import Select from "../components/ui/Select";
 
@@ -80,7 +80,8 @@ const Profile = () => {
               <Input label="Height (cm)" type="number" value={formData.height} onChange={(v) => setFormData({...formData, height: Number(v)})}
               min={100} max={250}/>
 
-              <Select label="Fitness Goal" value={formData.goal as string} onChange={(v)=> setFormData({...formData, goal: v as 'lose' | 'maintain' | 'gain'})} />
+              <Select label="Fitness Goal" value={formData.goal as string} onChange={(v)=> setFormData({...formData, goal: v as 'lose' | 'maintain' | 'gain'})}
+              options={goalOptions} />
             </div>
           ) : (
             <>
