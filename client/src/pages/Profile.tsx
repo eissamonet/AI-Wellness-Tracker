@@ -69,7 +69,8 @@ const Profile = () => {
 
           {isEditing ? (
             <div className="space-y-4">
-              <Input />
+              <Input label="Age" type="number" value={formData.age} onChange={(v) => setFormData({...formData, age: Number(v.target.value)})}
+              min={13} max={120}/>
             </div>
           ) : (
             <>
