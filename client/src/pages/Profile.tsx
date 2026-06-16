@@ -6,6 +6,7 @@ import Card from "../components/ui/Card";
 import { Calendar, Scale, Target, User } from "lucide-react";
 import Button from "../components/ui/Button";
 import { goalLabels } from "../assets/assets";
+import Input from "../components/ui/Input";
 
 const Profile = () => {
   const {user, logout, fetchUser, allFoodLogs, allActivityLogs} = useAppContext()
@@ -67,7 +68,9 @@ const Profile = () => {
           </div>
 
           {isEditing ? (
-            <div></div>
+            <div className="space-y-4">
+              <Input />
+            </div>
           ) : (
             <>
               <div className="space-y-4">
