@@ -82,6 +82,12 @@ const Profile = () => {
 
               <Select label="Fitness Goal" value={formData.goal as string} onChange={(v)=> setFormData({...formData, goal: v as 'lose' | 'maintain' | 'gain'})}
               options={goalOptions} />
+
+              <div className="flex gap-3 pt-2">
+                <Button>
+
+                </Button>
+              </div>
             </div>
           ) : (
             <>
