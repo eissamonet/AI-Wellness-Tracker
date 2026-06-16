@@ -111,11 +111,26 @@ const Profile = () => {
                         Height
                       </p>
                       <p className="font-semibold text-slate-800 dark:text-white">
-                        {user.weight} kg
+                        {user.height} cm
                       </p>
                     </div>
                   </div>
                 )}
+
+                {/* goal */}
+                <div className="flex items-center gap-4 p-3 bg-slate-50 dark:bg-slate-800 rounded-lg transition-colors duration-200">
+                  <div className="size-10 rounded-lg bg-green-100 dark:bg-green-900/20 flex items-center justify-center">
+                    <User className="size-4.5 text-green-600 dark:text-green-400" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                      Height
+                    </p>
+                    <p className="font-semibold text-slate-800 dark:text-white">
+                      {user.height} cm
+                    </p>
+                  </div>
+                </div>
               </div>
 
               <Button
