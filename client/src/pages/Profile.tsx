@@ -3,8 +3,9 @@ import { useAppContext } from "../context/AppContext"
 import { useTheme } from "../context/ThemeContext";
 import type { ProfileFormData } from "../types";
 import Card from "../components/ui/Card";
-import { Calendar, Scale, User } from "lucide-react";
+import { Calendar, Scale, Target, User } from "lucide-react";
 import Button from "../components/ui/Button";
+import { goalLabels } from "../assets/assets";
 
 const Profile = () => {
   const {user, logout, fetchUser, allFoodLogs, allActivityLogs} = useAppContext()
@@ -120,14 +121,14 @@ const Profile = () => {
                 {/* goal */}
                 <div className="flex items-center gap-4 p-3 bg-slate-50 dark:bg-slate-800 rounded-lg transition-colors duration-200">
                   <div className="size-10 rounded-lg bg-orange-100 dark:bg-orange-900/20 flex items-center justify-center">
-                    <User className="size-4.5 text-orange-600 dark:text-orange-400" />
+                    <Target className="size-4.5 text-orange-600 dark:text-orange-400" />
                   </div>
                   <div>
                     <p className="text-sm text-slate-500 dark:text-slate-400">
                       Goal
                     </p>
                     <p className="font-semibold text-slate-800 dark:text-white">
-                      {user.goal} cm
+                      {goalLabels[user.goal || 'gain']}
                     </p>
                   </div>
                 </div>
