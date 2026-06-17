@@ -47,8 +47,9 @@ const Profile = () => {
       await mockApi.user.update(user?.id || '',updates)
       await fetchUser(user?.token || '')
       toast.success('Profile updated successfully')
-      } catch (error) {
-
+      } catch (error: any) {
+        console.log(error);
+        toast.error(error?.message || 'Failed to update profile');
     }
   }
 
