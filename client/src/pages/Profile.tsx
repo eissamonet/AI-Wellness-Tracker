@@ -32,10 +32,8 @@ const Profile = () => {
   }
 
   useEffect(() => {
-    (() => {
-      fetchUserData()
-    })()
-  }, [user])
+    fetchUserData()
+  }, [])
 
   const handleSave = async() => {
     try {
