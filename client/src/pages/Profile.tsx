@@ -98,7 +98,7 @@ const Profile = () => {
                 }}>
                   Cancel
                 </Button>
-                <Button className="flex-1">
+                <Button onClick={handleSave} className="flex-1">
                   Save Changes
                 </Button>
               </div>
