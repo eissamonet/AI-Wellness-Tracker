@@ -213,8 +213,8 @@ const Profile = () => {
             <h3 className="font-semibold text-slate-800 dark:text-white mb-4">Your Stats</h3>
             <div className="grid grid-cols-2 gap-4">
               <div className="text-center p-4 bg-emerald-50 dark:bg-emerald-900/10 rounded-xl">
-                <p>{stats.totalFoodEntries}</p>
-                <p>Food Entries</p>
+                <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">{stats.totalFoodEntries}</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400">Food Entries</p>
               </div>
               <div className="text-center p-4 bg-blue-50 dark:bg-blue-900/10 rounded-xl">
                 <p>{stats.totalActivities}</p>
