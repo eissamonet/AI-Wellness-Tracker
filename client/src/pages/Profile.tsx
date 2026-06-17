@@ -234,7 +234,7 @@ const Profile = () => {
           </div>
 
           {/* logout btn*/}
-          <Button>
+          <Button variant="danger" onClick={logout} className="w-full ring ring-red-300 hover:ring-2">
             <LogOutIcon />
             Logout
           </Button>
