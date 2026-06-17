@@ -56,6 +56,7 @@ const Profile = () => {
   const getStats = () => {
     const totalFoodEntries = allFoodLogs?.length || 0;
     const totalActivities = allActivityLogs?.length || 0;
+    return {totalFoodEntries, totalActivities}
   }
 
 
