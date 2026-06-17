@@ -232,6 +232,10 @@ const Profile = () => {
               <span className="text-base">{theme === 'light' ? 'Dark Mode' : 'Light Mode'}</span>
             </button>
           </div>
+
+          {/* logout btn*/}
+
+
         </div>
       </div>
     </div>
