@@ -44,7 +44,7 @@ const Profile = () => {
         ...formData,
         goal: formData.goal as 'lose' | 'maintain' | 'gain'
       };
-      await mockApi.user.update(user?.id || '',updates)
+      await mockApi.user.update(user?.id || '', updates)
       await fetchUser(user?.token || '')
       toast.success('Profile updated successfully')
       } catch (error: any) {
