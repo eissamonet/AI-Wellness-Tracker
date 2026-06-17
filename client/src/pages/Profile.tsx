@@ -9,7 +9,7 @@ import { goalLabels, goalOptions } from "../assets/assets";
 import Input from "../components/ui/Input";
 import Select from "../components/ui/Select";
 import mockApi from "../assets/mockApi";
-import { toast } from "react-hot-toast/headless";
+import { toast } from "react-hot-toast"
 
 const Profile = () => {
   const {user, logout, fetchUser, allFoodLogs, allActivityLogs} = useAppContext()
@@ -47,11 +47,12 @@ const Profile = () => {
       await mockApi.user.update(user?.id || '', updates)
       await fetchUser(user?.token || '')
       toast.success('Profile updated successfully')
+      setIsEditing(false)
       } catch (error: any) {
         console.log(error);
         toast.error(error?.message || 'Failed to update profile');
+        setIsEditing(false)
     }
-    setIsEditing(false)
   }
 
 
