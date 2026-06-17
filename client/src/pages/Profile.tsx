@@ -3,7 +3,7 @@ import { useAppContext } from "../context/AppContext"
 import { useTheme } from "../context/ThemeContext";
 import type { ProfileFormData, UserData } from "../types";
 import Card from "../components/ui/Card";
-import { Calendar, MoonIcon, Scale, SunIcon, Target, User } from "lucide-react";
+import { Calendar, LogOutIcon, MoonIcon, Scale, SunIcon, Target, User } from "lucide-react";
 import Button from "../components/ui/Button";
 import { goalLabels, goalOptions } from "../assets/assets";
 import Input from "../components/ui/Input";
@@ -234,7 +234,10 @@ const Profile = () => {
           </div>
 
           {/* logout btn*/}
-
+          <button>
+            <LogOutIcon />
+            Logout
+          </button>
 
         </div>
       </div>
