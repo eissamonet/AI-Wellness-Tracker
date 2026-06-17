@@ -84,7 +84,18 @@ const Profile = () => {
               options={goalOptions} />
 
               <div className="flex gap-3 pt-2">
-                <Button variant="secondary" className="flex-1">
+                <Button variant="secondary" className="flex-1"
+                onClick={()=>{
+                  setIsEditing(false)
+                  setFormData({
+                    age: Number(user.age),
+                    weight: Number(user.weight),
+                    height: Number(user.height),
+                    goal: user.goal || '',
+                    dailyCalorieIntake: user.dailyCalorieIntake || '2000',
+                    dailyCalorieBurn: user.dailyCalorieBurn || 400
+                  })
+                }}>
                   Cancel
                 </Button>
                 <Button className="flex-1">
