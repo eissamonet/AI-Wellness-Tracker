@@ -92,7 +92,7 @@ const Profile = () => {
                     weight: Number(user.weight),
                     height: Number(user.height),
                     goal: user.goal || '',
-                    dailyCalorieIntake: user.dailyCalorieIntake || '2000',
+                    dailyCalorieIntake: user.dailyCalorieIntake || 2000,
                     dailyCalorieBurn: user.dailyCalorieBurn || 400
                   })
                 }}>
