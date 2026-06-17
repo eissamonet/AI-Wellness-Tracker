@@ -234,10 +234,10 @@ const Profile = () => {
           </div>
 
           {/* logout btn*/}
-          <button>
+          <Button>
             <LogOutIcon />
             Logout
-          </button>
+          </Button>
 
         </div>
       </div>
