@@ -207,7 +207,13 @@ const Profile = () => {
           )}
         </Card>
         {/* right col */}
-        <div></div>
+        <div className="space-y-4">
+          {/* stats cards */}
+          <Card>
+            <h3 className="font-semibold text-slate-800 dark:text-white mb-4">Your Stats</h3>
+          </Card>
+
+        </div>
       </div>
     </div>
   );
