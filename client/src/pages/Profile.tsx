@@ -217,8 +217,8 @@ const Profile = () => {
                 <p className="text-sm text-slate-500 dark:text-slate-400">Food Entries</p>
               </div>
               <div className="text-center p-4 bg-blue-50 dark:bg-blue-900/10 rounded-xl">
-                <p>{stats.totalActivities}</p>
-                <p>Activities</p>
+                <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">{stats.totalActivities}</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400">Activities</p>
               </div>
             </div>
           </Card>
