@@ -51,6 +51,7 @@ const Profile = () => {
         console.log(error);
         toast.error(error?.message || 'Failed to update profile');
     }
+    setIsEditing(false)
   }
 
 
