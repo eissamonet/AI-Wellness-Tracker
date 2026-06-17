@@ -3,7 +3,7 @@ import { useAppContext } from "../context/AppContext"
 import { useTheme } from "../context/ThemeContext";
 import type { ProfileFormData, UserData } from "../types";
 import Card from "../components/ui/Card";
-import { Calendar, Scale, Target, User } from "lucide-react";
+import { Calendar, MoonIcon, Scale, Target, User } from "lucide-react";
 import Button from "../components/ui/Button";
 import { goalLabels, goalOptions } from "../assets/assets";
 import Input from "../components/ui/Input";
@@ -221,8 +221,14 @@ const Profile = () => {
                 <p className="text-sm text-slate-500 dark:text-slate-400">Activities</p>
               </div>
             </div>
-          </Card>
 
+          </Card>
+          {/* toggle theme btn for mobile */}
+          <div className="lg:hidden">
+            <button>
+              {theme === 'light' ? <MoonIcon />}
+            </button>
+          </div>
         </div>
       </div>
     </div>
