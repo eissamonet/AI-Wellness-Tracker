@@ -216,7 +216,7 @@ const Profile = () => {
                 <p>{stats.totalFoodEntries}</p>
                 <p>Food Entries</p>
               </div>
-              <div className="text-center p-4 bg-emerald-50 dark:bg-emerald-900/10 rounded-xl">
+              <div className="text-center p-4 bg-blue-50 dark:bg-blue-900/10 rounded-xl">
                 <p>{stats.totalActivities}</p>
                 <p>Activities</p>
               </div>
