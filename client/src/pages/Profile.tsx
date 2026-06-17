@@ -3,7 +3,7 @@ import { useAppContext } from "../context/AppContext"
 import { useTheme } from "../context/ThemeContext";
 import type { ProfileFormData, UserData } from "../types";
 import Card from "../components/ui/Card";
-import { Calendar, MoonIcon, Scale, Target, User } from "lucide-react";
+import { Calendar, MoonIcon, Scale, SunIcon, Target, User } from "lucide-react";
 import Button from "../components/ui/Button";
 import { goalLabels, goalOptions } from "../assets/assets";
 import Input from "../components/ui/Input";
@@ -225,8 +225,10 @@ const Profile = () => {
           </Card>
           {/* toggle theme btn for mobile */}
           <div className="lg:hidden">
-            <button>
-              {theme === 'light' ? <MoonIcon />}
+            <button className="flex items-center gap-3 px-4 py-2.5 w-full text-slate-500 dark:text-slate-400 hover:bg-slate-50
+            dark:hover:bg:slat800 hover:text-slate-700 dark:hover:text-slate-200 rounded-lg transition-colors duration-200 cursor-pointer">
+              {theme === 'light' ? <MoonIcon className="size-5" /> : <SunIcon className="size-5" />}
+              <span className="text-base">{theme === 'light' ? 'Dark Mode' : 'Light Mode'}</span>
             </button>
           </div>
         </div>
