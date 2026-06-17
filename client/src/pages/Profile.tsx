@@ -59,6 +59,8 @@ const Profile = () => {
     return {totalFoodEntries, totalActivities}
   }
 
+  const stats = getStats();
+
 
   if(!user || !formData) return null
 
