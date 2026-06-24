@@ -17,7 +17,7 @@ export default factories.createCoreController('api::food-log.food-log',
       body.users_permissions_user = user.id; // Assign the logged-in user's ID to the users_permissions_user field
 
       const entry = await strapi.entityService.create(
-        "api::activity-log.activity-log",
+        "api::food-log.food-log",
         {
           data: body,
           populate: ["users_permissions_user"], // Populate the users_permissions_user relation
@@ -29,7 +29,7 @@ export default factories.createCoreController('api::food-log.food-log',
       const user = ctx.state.user;
 
       const result = await strapi.entityService.findMany(
-        "api::activity-log.activity-log",
+        "api::food-log.food-log",
         {
           filters: { users_permissions_user: user.id },
           populate: ["users_permissions_user"], // Populate the users_permissions_user relation
@@ -42,7 +42,7 @@ export default factories.createCoreController('api::food-log.food-log',
       const { id } = ctx.params;
 
       const result = await strapi.entityService.findMany(
-        "api::activity-log.activity-log",
+        "api::food-log.food-log",
         {
           filters: { id, users_permissions_user: user.id },
           populate: ["users_permissions_user"], // Populate the users_permissions_user relation
