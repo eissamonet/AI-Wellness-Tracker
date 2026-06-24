@@ -38,5 +38,19 @@ export default factories.createCoreController(
       );
       return result;
     },
-  }),
+    async findOne(ctx) {
+      const user = ctx.state.user;
+      const { id } = ctx.params;
+
+      const result = await strapi.entityService.findMany(
+        "api::activity-log.activity-log",
+        {
+          filters: { id, users_permissions_user: user.id },
+          populate: ["users_permissions_user"], // Populate the users_permissions_user relation
+        },
+      )
+      if(!result.length) return ctx.notFound('Not Found')
+      return result[0];
+    },
+  })
 );
