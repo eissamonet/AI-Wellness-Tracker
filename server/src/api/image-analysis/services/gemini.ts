@@ -1,5 +1,5 @@
 
 
-export const analyzeImage = async (imagePath: string) => {
+export const analyzeImage = async (filePath: string) => {
 
 }

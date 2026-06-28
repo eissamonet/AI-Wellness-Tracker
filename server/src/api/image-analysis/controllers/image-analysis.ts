@@ -1,4 +1,5 @@
 import { Context } from 'koa';
+import { analyzeImage } from '../services/gemini';
 
 
 export default {
@@ -9,7 +10,8 @@ export default {
       const filePath = file.filepath;
 
       try {
-
+        const result = await analyzeImage(filePath)
+        return ctx.send({success: true, result });
       } catch (error) {
 
       }
