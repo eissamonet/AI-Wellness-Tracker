@@ -20,7 +20,7 @@ export default factories.createCoreController('api::food-log.food-log',
             name,
             mealType,
             calories,
-            users_permissions_user: user.id, // ✅ attach user correctly
+            users_permissions_user: user.id,
         },
         populate: ["users_permissions_user"],
     });
