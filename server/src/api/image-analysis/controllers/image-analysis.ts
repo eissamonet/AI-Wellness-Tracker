@@ -13,7 +13,7 @@ export default {
         const result = await analyzeImage(filePath)
         return ctx.send({success: true, result });
       } catch (error) {
-
+        ctx.internalServerError('Error analyzing image', {  error: error.message });
       }
     }
 }
