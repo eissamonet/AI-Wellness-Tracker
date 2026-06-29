@@ -1,4 +1,4 @@
-import { HandPlatter } from "lucide-react";
+
 
 export default {
     routes: [
