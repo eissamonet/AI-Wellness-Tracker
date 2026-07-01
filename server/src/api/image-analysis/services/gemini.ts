@@ -4,6 +4,9 @@ import fs from "fs";
 const ai = new GoogleGenAI({});
 
 export const analyzeImage = async (filePath: string) => {
+
+    try {
+
   const base64ImageFile = fs.readFileSync(filePath, {
     encoding: "base64",
   });
@@ -36,5 +39,10 @@ export const analyzeImage = async (filePath: string) => {
 });
 
 // response.text should be valid JSON matching the schema
-return JSON.parse(response.text);
-};
+return JSON.parse(response.text)
+
+} catch (error) {
+     console.log(error);
+     throw error;
+    }
+}
