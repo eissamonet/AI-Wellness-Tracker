@@ -32,5 +32,9 @@ export const analyzeImage = async (filePath: string) => {
    const response = await analyzeImage.models.generateContent({
     model: "gemini-2.5-flash",
     contents: contents,
+    config
 });
+
+// response.text should be valid JSON matching the schema
+return JSON.parse(response.text);
 };
