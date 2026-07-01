@@ -1,14 +1,14 @@
 import { GoogleGenAI } from "@google/genai";
 import fs from "fs";
 
-const client = new GoogleGenAI({});
+const ai = new GoogleGenAI({});
 
 export const analyzeImage = async (filePath: string) => {
   const base64ImageFile = fs.readFileSync(filePath, {
     encoding: "base64",
   });
 
-   const  contents = [
+   const contents = [
     {
         inlineData: {
         mimeType: "image/jpeg",
