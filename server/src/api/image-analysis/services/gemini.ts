@@ -14,12 +14,23 @@ export const analyzeImage = async (filePath: string) => {
         mimeType: "image/jpeg",
         data: base64ImageFile,
         },
-    }
-    { text : "Caption this image."},
+    },
+    { text : "Extract the food name and estimated calories from this image in a JSON object."},
    ];
 
+   const config = {
+    responseMimeType: "application/json",
+    responseJsonSchema: {
+        type: "object",
+        properties: {
+            name: { type: "string" },
+            calories: { type: "number" },
+        },
+    },
+   }
+
    const response = await analyzeImage.models.generateContent({
-    model: "gemini-3-flash-preview",
+    model: "gemini-2.5-flash",
     contents: contents,
 });
 };
