@@ -1,7 +1,7 @@
 import { GoogleGenAI } from "@google/genai";
 import fs from "fs";
 
-const ai = new GoogleGenAI({});
+const ai = new GoogleGenAI({apiKey: process.env.GEMINI_API_KEY});
 
 export const analyzeImage = async (filePath: string) => {
 
@@ -32,7 +32,7 @@ export const analyzeImage = async (filePath: string) => {
     },
    }
 
-   const response = await analyzeImage.models.generateContent({
+   const response = await ai.models.generateContent({
     model: "gemini-2.5-flash",
     contents: contents,
     config
