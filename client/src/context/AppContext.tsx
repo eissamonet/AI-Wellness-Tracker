@@ -3,6 +3,7 @@ import { type ActivityEntry, type Credentials, type FoodEntry, initialState, typ
 import { useNavigate } from "react-router-dom";
 import mockApi from "../assets/mockApi";
 import api from "../configs/api";
+import toast from "react-hot-toast";
 
 
 const AppContext = createContext(initialState)
@@ -18,7 +19,8 @@ export const AppProvider = ({children} : {children: React.ReactNode})=> {
 
     const signup = async (credentials: Credentials) => {
 
-        const {data} = await api.post('/api/auth/local/register', credentials)
+        try {
+           const {data} = await api.post('/api/auth/local/register', credentials)
 
         setUser({...data.user, token: data.jwt})
         if(data?.user?.age && data?.user?.weight && data?.user?.goal) {
@@ -26,6 +28,11 @@ export const AppProvider = ({children} : {children: React.ReactNode})=> {
         }
         localStorage.setItem('token', data.jwt)
         api.defaults.headers.common['Authorization'] = `Bearer ${data.jwt}`
+
+        } catch (error: any) {
+           console.log(error);
+           toast.error(error?.response?.data?.error?.message || error?.message)
+        }
     }
 
     const login = async (credentials: Credentials) => {
