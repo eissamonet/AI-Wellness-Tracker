@@ -20,7 +20,7 @@ export const AppProvider = ({children} : {children: React.ReactNode})=> {
 
         const {data} = await api.post('/api/auth/local/register', credentials)
 
-        setUser(data.user)
+        setUser({...data.user, token: data.jwt})
         if(data?.user?.age && data?.user?.weight && data?.user?.goal) {
             setOnboardingCompleted(true)
         }
