@@ -60,7 +60,7 @@ export const AppProvider = ({children} : {children: React.ReactNode})=> {
         if(data?.age && data?.weight && data?.goal) {
             setOnboardingCompleted(true)
         }
-        setIsUserFetched(true)
+        api.defaults.headers.common['Authorization'] = `Bearer ${data.jwt}`
     }
 
     const fetchFoodLogs = async () => {
