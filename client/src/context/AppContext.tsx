@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { type ActivityEntry, type Credentials, type FoodEntry, initialState, type User } from "../types";
 import { useNavigate } from "react-router-dom";
 import mockApi from "../assets/mockApi";
+import api from "../configs/api";
 
 
 const AppContext = createContext(initialState)
@@ -16,7 +17,7 @@ export const AppProvider = ({children} : {children: React.ReactNode})=> {
     const [allActivityLogs, setAllActivityLogs] = useState<ActivityEntry[]>([])
 
     const signup = async (credentials: Credentials) => {
-        const {data} = await mockApi.auth.register(credentials)
+        const {data} = await api.post('/api/auth/local/register', credentials)
         setUser(data.user)
         if(data?.user?.age && data?.user?.weight && data?.user?.goal) {
             setOnboardingCompleted(true)
