@@ -25,6 +25,7 @@ export const AppProvider = ({children} : {children: React.ReactNode})=> {
             setOnboardingCompleted(true)
         }
         localStorage.setItem('token', data.jwt)
+        api.defaults.headers.common['Authorization'] = `Bearer ${data.jwt}`
     }
 
     const login = async (credentials: Credentials) => {
