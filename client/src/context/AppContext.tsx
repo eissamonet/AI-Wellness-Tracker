@@ -17,7 +17,9 @@ export const AppProvider = ({children} : {children: React.ReactNode})=> {
     const [allActivityLogs, setAllActivityLogs] = useState<ActivityEntry[]>([])
 
     const signup = async (credentials: Credentials) => {
+
         const {data} = await api.post('/api/auth/local/register', credentials)
+
         setUser(data.user)
         if(data?.user?.age && data?.user?.weight && data?.user?.goal) {
             setOnboardingCompleted(true)
