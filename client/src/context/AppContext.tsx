@@ -70,8 +70,12 @@ export const AppProvider = ({children} : {children: React.ReactNode})=> {
     }
 
     const fetchFoodLogs = async () => {
-       const {data} = await mockApi.foodLogs.list()
-       setAllFoodLogs(data)
+       try {
+
+       } catch (error: any) {
+           console.log(error);
+           toast.error(error?.response?.data?.error?.message || error?.message)
+       }
     }
 
      const fetchActivityLogs = async () => {
