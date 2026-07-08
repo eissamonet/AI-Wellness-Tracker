@@ -107,11 +107,8 @@ export const AppProvider = ({children} : {children: React.ReactNode})=> {
                await fetchFoodLogs(token)
                await fetchActivityLogs(token)
             })();
-        }else {
-            // schedule the state update to avoid calling setState synchronously within the effect
-            Promise.resolve().then(() => setIsUserFetched(true))
         }
-    }, [user])
+        }, [])
 
     const value = {
         user, setUser, isUserFetched, fetchUser, signup,
