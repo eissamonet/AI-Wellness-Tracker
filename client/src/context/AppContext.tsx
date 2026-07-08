@@ -81,8 +81,14 @@ export const AppProvider = ({children} : {children: React.ReactNode})=> {
     }
 
      const fetchActivityLogs = async () => {
-       const {data} = await mockApi.activityLogs.list()
-       setAllActivityLogs(data)
+        try {
+          const {data} = await api.get('/api/food-logs', { headers: { Authorization: `Bearer ${token}`}})
+          setAllFoodLogs(data)
+
+       } catch (error: any) {
+           console.log(error);
+           toast.error(error?.response?.data?.error?.message || error?.message)
+       }
     }
 
     const logout = () => {
