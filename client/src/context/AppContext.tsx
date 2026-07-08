@@ -69,8 +69,10 @@ export const AppProvider = ({children} : {children: React.ReactNode})=> {
         setIsUserFetched(true)
     }
 
-    const fetchFoodLogs = async () => {
+    const fetchFoodLogs = async (token: string) => {
        try {
+          const {data} = await api.get('/api/food-logs', { headers: { Authorization: `Bearer ${token}`}})
+          setAllFoodLogs(data)
 
        } catch (error: any) {
            console.log(error);
