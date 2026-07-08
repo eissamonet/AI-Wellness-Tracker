@@ -95,6 +95,7 @@ export const AppProvider = ({children} : {children: React.ReactNode})=> {
         localStorage.removeItem('token')
         setUser(null)
         setOnboardingCompleted(false)
+        api.defaults.headers.common['Authorization'] = '';
         navigate('/')
     }
 
