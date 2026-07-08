@@ -80,10 +80,10 @@ export const AppProvider = ({children} : {children: React.ReactNode})=> {
        }
     }
 
-     const fetchActivityLogs = async () => {
+     const fetchActivityLogs = async (token: string) => {
         try {
-          const {data} = await api.get('/api/food-logs', { headers: { Authorization: `Bearer ${token}`}})
-          setAllFoodLogs(data)
+          const {data} = await api.get('/api/activity-logs', { headers: { Authorization: `Bearer ${token}`}})
+          setAllActivityLogs(data)
 
        } catch (error: any) {
            console.log(error);
