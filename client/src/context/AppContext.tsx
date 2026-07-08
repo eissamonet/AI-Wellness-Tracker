@@ -104,8 +104,8 @@ export const AppProvider = ({children} : {children: React.ReactNode})=> {
         if(token){
             (async () => {
                await fetchUser(token)
-               await fetchFoodLogs()
-               await fetchActivityLogs()
+               await fetchFoodLogs(token)
+               await fetchActivityLogs(token)
             })();
         }else {
             // schedule the state update to avoid calling setState synchronously within the effect
