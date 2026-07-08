@@ -12,7 +12,7 @@ export const AppProvider = ({children} : {children: React.ReactNode})=> {
 
     const navigate = useNavigate()
     const [user, setUser] = useState<User>(null)
-    const [isUserFetched, setIsUserFetched] = useState(false)
+    const [isUserFetched, setIsUserFetched] = useState(localStorage.getItem('token') ? false : true)
     const [onboardingCompleted, setOnboardingCompleted] = useState(false)
     const [allFoodLogs, setAllFoodLogs] = useState<FoodEntry[]>([])
     const [allActivityLogs, setAllActivityLogs] = useState<ActivityEntry[]>([])
