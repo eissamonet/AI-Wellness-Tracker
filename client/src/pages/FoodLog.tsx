@@ -44,10 +44,9 @@ const FoodLog = () => {
      setAllFoodLogs(prev => [...prev, data]);
      setFormData({name: '', calories: 0, mealType: ''});
      setShowForm(false)
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
       toast.error(error?.response?.data?.error?.message || error?.message);
-
     }
 
   }
