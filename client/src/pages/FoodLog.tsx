@@ -10,7 +10,7 @@ import Select from "../components/ui/Select";
 import mockApi from "../assets/mockApi";
 import { toast } from "react-hot-toast/headless";
 import api from "../configs/api";
-import { data } from "react-router-dom";
+
 
 const FoodLog = () => {
   const {allFoodLogs, setAllFoodLogs} = useAppContext();
@@ -59,7 +59,7 @@ const FoodLog = () => {
       setAllFoodLogs(prev => prev.filter((e) => e.documentId !== documentId));
     } catch (error: any) {
       console.log(error);
-      toast.error(error?.message || 'Failed to delete food');
+      toast.error(error?.response?.data?.error?.message || error?.message);
     }
   }
 
