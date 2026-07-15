@@ -55,7 +55,8 @@ const FoodLog = () => {
     try {
       const confirm = window.confirm("Are you sure you want to delete this entry?");
       if(!confirm) return;
-      await mockApi.foodLogs.delete(documentId);
+
+      await api.delete(`/api/food-logs/${documentId}`);
       setAllFoodLogs(prev => prev.filter((e) => e.documentId !== documentId));
     } catch (error: any) {
       console.log(error);
