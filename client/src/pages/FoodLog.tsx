@@ -9,6 +9,8 @@ import Input from "../components/ui/Input";
 import Select from "../components/ui/Select";
 import mockApi from "../assets/mockApi";
 import { toast } from "react-hot-toast/headless";
+import api from "../configs/api";
+import { data } from "react-router-dom";
 
 const FoodLog = () => {
   const {allFoodLogs, setAllFoodLogs} = useAppContext();
@@ -37,10 +39,15 @@ const FoodLog = () => {
       return toast.error('Please fill in all fields correctly');
     }
 
-    const {data} = await mockApi.foodLogs.create({data:formData});
-    setAllFoodLogs(prev => [...prev, data]);
-    setFormData({name: '', calories: 0, mealType: ''});
-    setShowForm(false);
+    try {
+     const {data} = await api.post('/api/food-logs', {data: formData})
+     setAllFoodLogs(prev => [...prev, data]);
+     setFormData({name: '', calories: 0, mealType: ''});
+     setShowForm(false)
+    } catch (error) {
+
+    }
+
   }
 
   const handleDelete = async(documentId: string) => {
