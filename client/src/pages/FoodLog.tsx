@@ -32,6 +32,11 @@ const FoodLog = () => {
 
   const handleSubmit = async(e: React.FormEvent)=> {
     e.preventDefault();
+
+    if(!formData.name.trim() || !formData.calories || formData.calories <= 0 || !formData.mealType) {
+      return toast.error('Please fill in all fields correctly');
+    }
+
     const {data} = await mockApi.foodLogs.create({data:formData});
     setAllFoodLogs(prev => [...prev, data]);
     setFormData({name: '', calories: 0, mealType: ''});
