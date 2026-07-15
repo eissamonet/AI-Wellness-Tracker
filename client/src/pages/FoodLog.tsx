@@ -81,7 +81,38 @@ const FoodLog = () => {
   const handleImageChange = async(e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if(!file) return;
-    // implement AI food recognition logic here
+    setLoading(true)
+    const formData = new formData();
+    formData.append('image', file)
+    try {
+     const {data} = await api.post('/api/image-analysis', formData,)
+     const result = data.result;
+     let mealType = '';
+
+     const hour = new Date().getHours();
+     if(hour >= 5 && hour < 12) {
+        mealType = 'breakfast';
+     } else if(hour >= 12 && hour < 16) {
+        mealType = 'lunch';
+     } else if(hour >= 16 && hour < 18) {
+        mealType = 'snack';
+     } else if(hour >= 18 && hour < 24) {
+      mealType = 'dinner';
+     }
+
+     setFormData({
+      name: result.name,
+      calories: result.calories,
+      mealType: mealType
+     })
+     setShowForm(true);
+     setLoading(false)
+    } catch (error: any) {
+      console.log(error);
+      toast.error(error?.response?.data?.error?.message || error?.message);
+      setLoading(false);
+    }
+
   }
 
   useEffect(() => {
