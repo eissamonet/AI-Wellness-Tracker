@@ -106,20 +106,8 @@ const FoodLog = () => {
 
      // save the result to database
 
-     setFormData({
-      name: result.name,
-      calories: result.calories,
-      mealType: mealType
-     })
-     setShowForm(true);
-     setLoading(false)
-    } catch (error: any) {
-      console.log(error);
-      toast.error(error?.response?.data?.error?.message || error?.message);
-      setLoading(false);
-    }
+     const {data: newEntry}
 
-  }
 
   useEffect(() => {
     (() => {
