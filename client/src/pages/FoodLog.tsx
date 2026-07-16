@@ -100,6 +100,12 @@ const FoodLog = () => {
       mealType = 'dinner';
      }
 
+     if(!mealType || !result.name || !result.calories) {
+      return toast.error('Missing data')
+     }
+
+     // save the result to database
+
      setFormData({
       name: result.name,
       calories: result.calories,
