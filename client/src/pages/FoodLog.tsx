@@ -111,9 +111,18 @@ const FoodLog = () => {
         calories: result.calories,
         mealType: mealType}
      })
+     setEntries([...entries, newEntry])
 
-    } catch (error) {
+     // rest input
+     if(inputRef.current) {
+      inputRef.current.value = '';
+     }
 
+    } catch (error: any) {
+      console.log(error);
+      toast.error(error?.response?.data?.error?.message || error?.message);
+    } finally {
+      setLoading(false)
     }
   }
 
