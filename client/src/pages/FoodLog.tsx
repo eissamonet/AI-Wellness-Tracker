@@ -90,7 +90,7 @@ const FoodLog = () => {
      let mealType = '';
 
      const hour = new Date().getHours();
-     if(hour >= 5 && hour < 12) {
+     if(hour >= 0 && hour < 12) {
         mealType = 'breakfast';
      } else if(hour >= 12 && hour < 16) {
         mealType = 'lunch';
