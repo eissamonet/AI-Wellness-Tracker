@@ -106,7 +106,16 @@ const FoodLog = () => {
 
      // save the result to database
 
-     const {data: newEntry}
+     const {data: newEntry} = await api.post('/api/food-logs', {data:
+      { name: result.name,
+        calories: result.calories,
+        mealType: mealType}
+     })
+
+    } catch (error) {
+
+    }
+  }
 
 
   useEffect(() => {
