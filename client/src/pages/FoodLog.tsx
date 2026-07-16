@@ -140,7 +140,7 @@ const FoodLog = () => {
         },
       });
       setEntries([...entries, newEntry])
-      setAllFoodLogs((prev) => [...prev, data]);
+      setAllFoodLogs((prev) => [...prev, newEntry]);
 
       // rest input
       if (inputRef.current) {
