@@ -8,6 +8,7 @@ import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
 import toast from "react-hot-toast";
 import mockApi from "../assets/mockApi";
+import api from "../configs/api";
 
 const ActivityLog = () => {
 
@@ -37,8 +38,9 @@ const ActivityLog = () => {
         return toast.error('Please enter valid activity name and duration');
       }
       try {
-        // mock API call
-        const {data} = await mockApi.activityLogs.create({data: formData});
+
+        const {data} = await api.post('/api/activity-logs', {data: formData});
+
         setAllActivityLogs(prev => [...prev, data]);
         setFormData({name: '', duration: 0, caloriesBurned: 0});
         setShowForm(false);
