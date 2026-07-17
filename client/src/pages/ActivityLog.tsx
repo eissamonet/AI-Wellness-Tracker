@@ -46,7 +46,7 @@ const ActivityLog = () => {
         setShowForm(false);
       } catch (error: any) {
         console.log(error);
-        toast.error(error?.message || 'Failed to add activity');
+        toast.error(error?.response?.data?.error?.message || error?.message);
       }
     }
 
