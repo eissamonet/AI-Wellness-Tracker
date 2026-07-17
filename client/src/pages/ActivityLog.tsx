@@ -72,6 +72,15 @@ const ActivityLog = () => {
     }
 
     const handleDelete = async(documentId: string) => {
+      try {
+        const confirm = window.confirm('Are you sure you want to delete this activity?')
+        if(!confirm) return;
+        await api.delete(`/api/activity-logs/${documentId}`);
+        setAllActivityLogs(prev => prev.filter((a) => a.documentId !== documentId));
+      } catch (error: any) {
+        console.log(error);
+        toast.error(error?.response?.data?.error?.message || error?.message);
+      }
 
     }
 
