@@ -3,7 +3,9 @@ import fs from "fs";
 
 const ai = new GoogleGenAI({apiKey: process.env.GEMINI_API_KEY});
 
-export const analyzeImage = async (filePath: string) => {
+const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
+export const analyzeImage = async (filePath: string, retries = 3): Promise<any> => {
 
     try {
 
@@ -33,7 +35,7 @@ export const analyzeImage = async (filePath: string) => {
    }
 
    const response = await ai.models.generateContent({
-    model: "gemini-2.5-flash",
+    model: "gemini-3.1-flash-lite",
     contents: contents,
     config
 });
