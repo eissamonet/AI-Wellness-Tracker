@@ -15,7 +15,7 @@ const ActivityLog = () => {
 
   const [activities, setActivities] = useState<ActivityEntry[]>([])
   const [showForm, setShowForm] = useState(false)
-  const [formData, setFormData] = useState({name: '', duration: 0, caloriesBurned: 0})
+  const [formData, setFormData] = useState({name: '', duration: 0, calories: 0})
   const [error, setError] = useState('')
 
   const today = new Date().toISOString().split('T')[0];
@@ -41,7 +41,7 @@ const ActivityLog = () => {
         const {data} = await api.post('/api/activity-logs', {data: formData});
 
         setAllActivityLogs(prev => [...prev, data]);
-        setFormData({name: '', duration: 0, caloriesBurned: 0});
+        setFormData({name: '', duration: 0, calories: 0});
         setShowForm(false);
       } catch (error: any) {
         console.log(error);
