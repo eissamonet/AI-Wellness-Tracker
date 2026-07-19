@@ -7,12 +7,14 @@ const config: Core.Config.Middlewares = [
   {
     name: 'strapi::cors',
     config: {
+      enabled: true,
       origin: [
         'http://localhost:5173',
         'https://ai-wellness-tracker-kohl.vercel.app'
       ],
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
       headers: ['Content-Type', 'Authorization'],
+      keepHeaderOnError: true,
     },
   },
   'strapi::poweredBy',
