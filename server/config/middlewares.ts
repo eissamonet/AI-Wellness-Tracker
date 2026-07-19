@@ -10,7 +10,8 @@ const config: Core.Config.Middlewares = [
       enabled: true,
       origin: [
         'http://localhost:5173',
-        'https://ai-wellness-tracker-kohl.vercel.app'
+        'https://ai-wellness-tracker-kohl.vercel.app',
+        /\.vercel\.app$/ // ✅ allows all vercel.app subdomains
       ],
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
       headers: ['Content-Type', 'Authorization'],
