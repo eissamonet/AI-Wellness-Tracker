@@ -1,4 +1,10 @@
-import { AtSignIcon, EyeIcon, EyeOffIcon, LockIcon, MailIcon } from "lucide-react";
+import {
+  AtSignIcon,
+  EyeIcon,
+  EyeOffIcon,
+  LockIcon,
+  MailIcon,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
@@ -13,15 +19,15 @@ const Login = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const navigate = useNavigate();
-  const { login, signup, user } = useAppContext()
+  const { login, signup, user } = useAppContext();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    if(state === "login"){
-      await login({email, password})
-    }else{
-      await signup({username, email, password})
+    if (state === "login") {
+      await login({ email, password });
+    } else {
+      await signup({ username, email, password });
     }
     setIsSubmitting(false);
   };
@@ -34,8 +40,18 @@ const Login = () => {
 
   return (
     <>
-    <Toaster />
+      <Toaster />
       <main className="login-page-container ">
+        {/* app titile */}
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold text-emerald-500">
+            AI Wellness Tracker
+          </h1>
+          <p className="text-gray-500 dark:text-gray-400 mt-2 text-sm">
+            Your personal health & fitness companion
+          </p>
+        </div>
+
         <form onSubmit={handleSubmit} className="login-form">
           <h2 className="text-3xl font-medium text-gray-900 dark:text-white">
             {state === "login" ? "Sign In " : "Sign Up"}
@@ -98,24 +114,52 @@ const Login = () => {
                 placeholder="Enter Password"
                 type={showPassword ? "text" : "password"}
               />
-              <button type='button' className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
-              onClick={()=> setShowPassword((prev) => !prev)}>
-                {showPassword ? <EyeOffIcon size={16}/> : <EyeIcon size={16}/>}
+              <button
+                type="button"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                onClick={() => setShowPassword((prev) => !prev)}
+              >
+                {showPassword ? (
+                  <EyeOffIcon size={16} />
+                ) : (
+                  <EyeIcon size={16} />
+                )}
               </button>
             </div>
           </div>
 
-          <button type= 'submit' disabled={isSubmitting}
-          className="login-button">
-            {isSubmitting ? "Signing In..." : state === "login" ? "Login" : "Sign Up"}
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="login-button"
+          >
+            {isSubmitting
+              ? "Signing In..."
+              : state === "login"
+                ? "Login"
+                : "Sign Up"}
           </button>
 
           {state === "login" ? (
-            <p className="text-center py-6 text-sm text-gray-500 dark:text-gray-400">Dont Have an Account?
-            <button onClick={()=> setState('sign-up')} className="ml-1 cursor-pointer text-green-600 hover:underline">Sign Up</button></p>
+            <p className="text-center py-6 text-sm text-gray-500 dark:text-gray-400">
+              Dont Have an Account?
+              <button
+                onClick={() => setState("sign-up")}
+                className="ml-1 cursor-pointer text-green-600 hover:underline"
+              >
+                Sign Up
+              </button>
+            </p>
           ) : (
-            <p className="text-center py-6 text-sm text-gray-500 dark:text-gray-400">Already Have an Account?
-            <button onClick={()=> setState('login')} className="ml-1 cursor-pointer text-green-600 hover:underline">Login</button></p>
+            <p className="text-center py-6 text-sm text-gray-500 dark:text-gray-400">
+              Already Have an Account?
+              <button
+                onClick={() => setState("login")}
+                className="ml-1 cursor-pointer text-green-600 hover:underline"
+              >
+                Login
+              </button>
+            </p>
           )}
         </form>
       </main>
