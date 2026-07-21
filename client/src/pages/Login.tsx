@@ -43,7 +43,7 @@ const Login = () => {
       <Toaster />
       <main className="login-page-container ">
         {/* app titile */}
-        <div className="text-center mb-8">
+        <div className="absolute top-20 left-20">
           <h1 className="text-4xl font-bold text-emerald-500">
             AI Wellness Tracker
           </h1>
