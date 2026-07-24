@@ -151,7 +151,7 @@ const Onboarding = () => {
               </div>
               <div className="flex flex-col gap-4 max-w-2xl">
                 <Input
-                  label="Weight (lb)"
+                  label="Weight (kg)"
                   type="number"
                   value={formData.weight}
                   onChange={(v) => updateField("weight", v)}
@@ -162,7 +162,7 @@ const Onboarding = () => {
                 />
 
                 <Input
-                  label="Height (in) - Optional"
+                  label="Height (cm) - Optional"
                   type="number"
                   value={formData.height}
                   onChange={(v) => updateField("height", v)}
