@@ -1,61 +1,87 @@
-# 🚀 Getting started with Strapi
+# AI Wellness Tracker 🏋️
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+A full stack AI-powered fitness tracking app that helps users monitor their daily food intake, track workouts, and analyze meals using Google Gemini AI.
 
-### `develop`
+## 🔗 Links
+- **Live App:** [ai-wellness-tracker-kohl.vercel.app](https://ai-wellness-tracker-kohl.vercel.app)
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
 
-```
+## 📸 Screenshots
+![Dashboard](screenshots/dashboard.png)
+![Food Log](screenshots/foodlog.png)
+![Activity Log](screenshots/activity.png)
+![AI Food Snap](screenshots/aifoodsnap.png)
+
+## ✨ Features
+- User authentication (sign up, log in, log out)
+- Food log with meal tracking (breakfast, lunch, dinner, snacks)
+- AI food image recognition using Google Gemini
+- Activity log with calorie tracking
+- Dashboard with weekly progress charts
+- Light/dark mode toggle
+- Personalized user profile
+- Daily calorie and activity progress bars
+
+## 🛠 Tech Stack
+### Frontend
+- React
+- TypeScript
+- Tailwind CSS
+- Recharts
+- Lucide React
+- React Hot Toast
+- Axios
+
+### Backend
+- Strapi v5
+- SQLite
+- Google Gemini AI
+- Node.js
+
+### Deployment
+- Frontend: Vercel
+- Backend: Railway
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js v20
+- npm
+
+### Installation
+
+**Clone the repo:**
+git clone https://github.com/eissamonet/AI-Wellness-Tracker.git
+cd AI-Wellness-Tracker
+
+**Install frontend dependencies:**
+cd client
+npm install
+
+**Install backend dependencies:**
+cd ../server
+npm install
+
+### Environment Variables
+
+**client/.env:**
+VITE_STRAPI_API_URL=http://localhost:1337
+
+**server/.env:**
+GEMINI_API_KEY=your_gemini_api_key
+APP_KEYS=your_app_keys
+API_TOKEN_SALT=your_api_token_salt
+ADMIN_JWT_SECRET=your_admin_jwt_secret
+JWT_SECRET=your_jwt_secret
+
+### Running Locally
+
+**Start the backend:**
+cd server
 npm run develop
-# or
-yarn develop
-```
 
-### `start`
+**Start the frontend:**
+cd client
+npm run dev
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
-
-```
-npm run start
-# or
-yarn start
-```
-
-### `build`
-
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
-
-```
-npm run build
-# or
-yarn build
-```
-
-## ⚙️ Deployment
-
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
-
-```
-yarn strapi deploy
-```
-
-## 📚 Learn more
-
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
-
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
-
-## ✨ Community
-
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
-
----
-
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+Visit http://localhost:5173 in your browser.
