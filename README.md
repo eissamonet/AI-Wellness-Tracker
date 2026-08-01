@@ -7,10 +7,9 @@ A full stack AI-powered fitness tracking app that helps users monitor their dail
 
 
 ## 📸 Screenshots
-![Dashboard](screenshots/dashboard.png)
-![Food Log](screenshots/foodlog.png)
-![Activity Log](screenshots/activity.png)
-![AI Food Snap](screenshots/aifoodsnap.png)
+![Home](screenshots/dashboard.png)
+
+
 
 ## ✨ Features
 - User authentication (sign up, log in, log out)
