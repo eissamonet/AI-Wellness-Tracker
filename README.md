@@ -8,6 +8,8 @@ A full stack AI-powered fitness tracking app that helps users monitor their dail
 
 ## 📸 Screenshot
 ![Home](screenshots/AIWellnessTracker.png)
+![Dashboard](screenshots/Dashboard.png)
+![FoodLog](screenshots/FoodLog.png)
 
 
 
