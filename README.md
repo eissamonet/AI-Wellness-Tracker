@@ -6,8 +6,8 @@ A full stack AI-powered fitness tracking app that helps users monitor their dail
 - **Live App:** [ai-wellness-tracker-kohl.vercel.app](https://ai-wellness-tracker-kohl.vercel.app)
 
 
-## 📸 Screenshots
-![Home](screenshots/dashboard.png)
+## 📸 Screenshot
+![Home](screenshots/AIWellnessTracker.png)
 
 
 
